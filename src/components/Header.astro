@@ -1,9 +1,9 @@
 ---
 import { getEntry } from 'astro:content';
 
-const navigation = await getEntry('navigation', 'navigation');
-const navLinks = navigation?.data?.items
-  ? [...navigation.data.items]
+const settings = await getEntry('settings', 'settings');
+const navLinks = settings?.data?.navigation
+  ? [...settings.data.navigation]
       .sort((a, b) => a.order - b.order)
       .map(item => ({ name: item.label, href: item.url }))
   : [];
@@ -16,7 +16,13 @@ const currentPath = Astro.url.pathname;
     <nav class="flex items-center justify-between h-16 md:h-20">
       <!-- Logo - Simple -->
       <a href="/" class="flex items-center gap-2 group">
-        <span class="text-xl font-semibold text-color-primary tracking-tight group-hover:opacity-70 transition-opacity">Momentaj</span>
+        {settings?.data?.logo ? (
+          <img src={settings.data.logo} alt={settings.data.site_name} class="h-8 w-auto group-hover:opacity-70 transition-opacity" />
+        ) : (
+          <span class="text-xl font-semibold text-color-primary tracking-tight group-hover:opacity-70 transition-opacity">
+            {settings?.data?.site_name || 'Momentaj'}
+          </span>
+        )}
       </a>
 
       <!-- Desktop Navigation - Clean and minimal -->

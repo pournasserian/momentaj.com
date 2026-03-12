@@ -45,7 +45,7 @@ const displayCaseStudies = caseStudies.map((study) => ({
       <div class="container-custom">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {displayCaseStudies.map((study, index) => (
-            <a href={study.href} class={`case-study-card group animate-stagger animate-delay-${(index + 1) * 100}`}>
+            <a href={study.href} class={`case-study-card bg-color-bg/50 border border-color-text/10 group animate-stagger animate-delay-${(index + 1) * 100}`}>
               <div class="h-64 bg-color-bg flex items-center justify-center border-b border-color-border/50 overflow-hidden">
                 <div class="transform group-hover:scale-110 transition-transform duration-1000">
                   <svg class="w-20 h-20 text-color-text-light2 opacity-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">

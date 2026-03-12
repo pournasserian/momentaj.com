@@ -4,6 +4,9 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { getEntry } from 'astro:content';
 
+const settings = await getEntry('settings', 'settings');
+const siteData = settings?.data;
+
 const contactPage = await getEntry('pages', 'contact');
 
 if (!contactPage) {
@@ -41,28 +44,34 @@ const { data: page } = contactPage;
           <!-- Contact Info -->
           <div class="lg:col-span-4 animate-fade-in-up">
             <div class="space-y-16">
-              <div>
-                <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-color-text-light2 mb-6">Email</h3>
-                <a href="mailto:info@momentaj.com" class="text-2xl font-medium text-color-primary hover:text-color-accent transition-colors tracking-tight">
-                  info@momentaj.com
-                </a>
-              </div>
+              {siteData?.email && (
+                <div>
+                  <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-color-text-light2 mb-6">Email</h3>
+                  <a href={`mailto:${siteData.email}`} class="text-2xl font-medium text-color-primary hover:text-color-accent transition-colors tracking-tight">
+                    {siteData.email}
+                  </a>
+                </div>
+              )}
               
-              <div>
-                <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-color-text-light2 mb-6">Office</h3>
-                <p class="text-2xl font-medium text-color-primary leading-tight tracking-tight">
-                  #204, 15 Wertheim Ct<br/>
-                  Richmond Hill, ON L4B 3H7<br/>
-                  Canada
-                </p>
-              </div>
+              {siteData?.address && (
+                <div>
+                  <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-color-text-light2 mb-6">Office</h3>
+                  <p class="text-2xl font-medium text-color-primary leading-tight tracking-tight">
+                    {siteData.address.split(',').map((part, i, arr) => (
+                      <Fragment>{part.trim()}{i < arr.length - 1 ? <br/> : ''}</Fragment>
+                    ))}
+                  </p>
+                </div>
+              )}
               
-              <div>
-                <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-color-text-light2 mb-6">Social</h3>
-                <a href="https://ca.linkedin.com/company/momentaj" target="_blank" rel="noopener noreferrer" class="text-2xl font-medium text-color-primary hover:text-color-accent transition-colors tracking-tight">
-                  LinkedIn
-                </a>
-              </div>
+              {siteData?.social_links?.linkedin && (
+                <div>
+                  <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-color-text-light2 mb-6">Social</h3>
+                  <a href={siteData.social_links.linkedin} target="_blank" rel="noopener noreferrer" class="text-2xl font-medium text-color-primary hover:text-color-accent transition-colors tracking-tight">
+                    LinkedIn
+                  </a>
+                </div>
+              )}
             </div>
           </div>
           

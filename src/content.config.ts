@@ -66,9 +66,12 @@ const settings = defineCollection({
   loader: glob({ pattern: 'settings.json', base: './src/content/_settings' }),
   schema: z.object({
     site_name: z.string(),
+    site_title: z.string(),
     site_description: z.string(),
+    site_keywords: z.string(),
     logo: z.string(),
     favicon: z.string(),
+    og_image: z.string(),
     email: z.string(),
     phone: z.string(),
     address: z.string(),
@@ -77,25 +80,10 @@ const settings = defineCollection({
       twitter: z.string().url().optional(),
       github: z.string().url().optional(),
     }),
-  }),
-});
-
-const seo = defineCollection({
-  loader: glob({ pattern: 'seo.json', base: './src/content/_settings' }),
-  schema: z.object({
-    site_title: z.string(),
-    site_keywords: z.string(),
-    og_image: z.string(),
     google_analytics_id: z.string().optional(),
     google_tag_manager_id: z.string().optional(),
     robots_txt: z.string(),
-  }),
-});
-
-const navigation = defineCollection({
-  loader: glob({ pattern: 'navigation.json', base: './src/content/_settings' }),
-  schema: z.object({
-    items: z.array(
+    navigation: z.array(
       z.object({
         label: z.string(),
         url: z.string(),
@@ -110,6 +98,4 @@ export const collections = {
   'services': services,
   'pages': pages,
   'settings': settings,
-  'seo': seo,
-  'navigation': navigation,
 };

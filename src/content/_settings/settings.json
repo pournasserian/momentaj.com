@@ -1,14 +1,45 @@
 {
   "site_name": "Momentaj",
+  "site_title": "Momentaj - Software Development & Consulting",
   "site_description": "Professional software development and consulting services",
+  "site_keywords": "software development, consulting, API integration, cloud devops, UI/UX design",
   "logo": "/media/logo.svg",
   "favicon": "/favicon.ico",
+  "og_image": "/media/og-default.jpg",
   "email": "hello@momentaj.com",
   "phone": "+1 234 567 8900",
   "address": "123 Tech Street, San Francisco, CA 94102",
   "social_links": {
-    "linkedin": "https://linkedin.com/company/momentaj",
-    "twitter": "https://twitter.com/momentaj",
-    "github": "https://github.com/momentaj"
-  }
+    "linkedin": "https://linkedin.com/company/momentaj"
+  },
+  "google_analytics_id": "",
+  "google_tag_manager_id": "",
+  "robots_txt": "Allow: /\nDisallow: /api/\nDisallow: /_",
+  "navigation": [
+    {
+      "label": "Home",
+      "url": "/",
+      "order": 1
+    },
+    {
+      "label": "Services",
+      "url": "/services",
+      "order": 2
+    },
+    {
+      "label": "Case Studies",
+      "url": "/case-studies",
+      "order": 3
+    },
+    {
+      "label": "About Us",
+      "url": "/about-us",
+      "order": 4
+    },
+    {
+      "label": "Contact",
+      "url": "/contact-us",
+      "order": 5
+    }
+  ]
 }

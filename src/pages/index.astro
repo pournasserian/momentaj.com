@@ -2,7 +2,11 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { getCollection } from 'astro:content';
+import { getEntry, getCollection } from 'astro:content';
+
+// Load settings
+const settings = await getEntry('settings', 'settings');
+const siteData = settings?.data;
 
 // Load content from CMS
 const allCaseStudies = await getCollection('case-studies');
@@ -63,7 +67,7 @@ const techStack = {
     { name: 'React Native', logo: 'https://cdn.simpleicons.org/react/000000' }
   ],
   cloud: [
-    { name: 'AWS', logo: 'https://cdn.simpleicons.org/amazonaws/000000' },
+    { name: 'AWS', logo: 'https://cdn.simpleicons.org/amazonwebservices/000000' },
     { name: 'Azure', logo: 'https://cdn.simpleicons.org/microsoftazure/000000' },
     { name: 'Google Cloud', logo: 'https://cdn.simpleicons.org/googlecloud/000000' },
     { name: 'Docker', logo: 'https://cdn.simpleicons.org/docker/000000' }
@@ -71,7 +75,7 @@ const techStack = {
 };
 ---
 
-<BaseLayout title="Momentaj - Tailored Software Solutions for Unique Business Needs">
+<BaseLayout title={siteData?.site_title || "Momentaj - Tailored Software Solutions for Unique Business Needs"}>
   <Header />
   
   <main>
@@ -85,7 +89,7 @@ const techStack = {
               Software that <br class="hidden md:block" /> drives results
             </h1>
             <p class="hero-subtitle mb-12 max-w-lg">
-              Tailored software solutions for unique business needs. We build high-performance digital products that drive growth.
+              {siteData?.site_description || 'Tailored software solutions for unique business needs. We build high-performance digital products that drive growth.'}
             </p>
             <div class="flex flex-wrap gap-6">
               <a href="/services" class="btn-primary">

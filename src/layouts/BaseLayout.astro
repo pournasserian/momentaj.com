@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
+import { getEntry } from 'astro:content';
 
 interface Props {
   title?: string;
@@ -15,12 +16,15 @@ interface Props {
   tags?: string[];
 }
 
+const settings = await getEntry('settings', 'settings');
+const siteData = settings?.data;
+
 const {
-  title = 'Momentaj - Tailored Software Solutions for Unique Business Needs',
-  description = 'Momentaj is a software development and IT consulting company based in Toronto, providing customized solutions to businesses across various industries.',
-  keywords = 'software development, consulting, API integration, cloud devops, UI/UX design, Toronto software company',
+  title = siteData?.site_title || 'Momentaj - Tailored Software Solutions for Unique Business Needs',
+  description = siteData?.site_description || 'Momentaj is a software development and IT consulting company based in Toronto, providing customized solutions to businesses across various industries.',
+  keywords = siteData?.site_keywords || 'software development, consulting, API integration, cloud devops, UI/UX design, Toronto software company',
   canonicalURL = Astro.url.href,
-  ogImage = '/og-image.png',
+  ogImage = siteData?.og_image || '/og-image.png',
   pageType = 'website',
   publishedTime,
   author = 'Momentaj Inc',
@@ -28,7 +32,7 @@ const {
   tags
 } = Astro.props;
 
-const siteName = 'Momentaj';
+const siteName = siteData?.site_name || 'Momentaj';
 const twitterHandle = '@momentaj';
 ---
 
@@ -87,9 +91,7 @@ const twitterHandle = '@momentaj';
     <meta name="apple-mobile-web-app-title" content="Momentaj" />
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/x-icon" href={siteData?.favicon || "/favicon.ico"} />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     
     <!-- Fonts -->
@@ -102,6 +104,28 @@ const twitterHandle = '@momentaj';
     <!-- Resource Hints -->
     <link rel="preconnect" href="https://momentaj.com" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Google Analytics -->
+    {siteData?.google_analytics_id && (
+      <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${siteData.google_analytics_id}`}></script>
+      <script is:inline define:vars={{ gaId: siteData.google_analytics_id }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', gaId);
+      </script>
+    )}
+
+    <!-- Google Tag Manager -->
+    {siteData?.google_tag_manager_id && (
+      <script is:inline define:vars={{ gtmId: siteData.google_tag_manager_id }}>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer',gtmId);
+      </script>
+    )}
 
     <script is:inline>
       const theme = (() => {
@@ -132,14 +156,14 @@ const twitterHandle = '@momentaj';
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Momentaj Inc",
+      "name": siteData?.site_name || "Momentaj Inc",
       "url": "https://momentaj.com",
-      "logo": "https://momentaj.com/logo.png",
-      "description": "Software development and IT consulting company based in Toronto",
+      "logo": `https://momentaj.com${siteData?.logo || "/logo.png"}`,
+      "description": siteData?.site_description || "Software development and IT consulting company based in Toronto",
       "foundingDate": "2019",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "#204, 15 Wertheim Ct",
+        "streetAddress": siteData?.address || "#204, 15 Wertheim Ct",
         "addressLocality": "Richmond Hill",
         "addressRegion": "ON",
         "postalCode": "L4B 3H7",
@@ -147,13 +171,14 @@ const twitterHandle = '@momentaj';
       },
       "contactPoint": {
         "@type": "ContactPoint",
-        "email": "info@momentaj.com",
+        "email": siteData?.email || "info@momentaj.com",
         "contactType": "customer service",
         "availableLanguage": "English"
       },
       "sameAs": [
-        "https://ca.linkedin.com/company/momentaj"
-      ],
+        siteData?.social_links?.linkedin,
+        siteData?.social_links?.twitter
+      ].filter(Boolean),
       "areaServed": {
         "@type": "Place",
         "name": "Toronto, Canada"
@@ -171,12 +196,12 @@ const twitterHandle = '@momentaj';
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "Momentaj",
+      "name": siteData?.site_name || "Momentaj",
       "url": "https://momentaj.com",
-      "description": "Software development and IT consulting services",
+      "description": siteData?.site_description || "Software development and IT consulting services",
       "publisher": {
         "@type": "Organization",
-        "name": "Momentaj Inc"
+        "name": siteData?.site_name || "Momentaj Inc"
       },
       "potentialAction": {
         "@type": "SearchAction",
@@ -189,14 +214,14 @@ const twitterHandle = '@momentaj';
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "name": "Momentaj Inc",
-      "image": "https://momentaj.com/logo.png",
+      "name": siteData?.site_name || "Momentaj Inc",
+      "image": `https://momentaj.com${siteData?.logo || "/logo.png"}`,
       "url": "https://momentaj.com",
-      "telephone": "+1-000-000-0000",
-      "email": "info@momentaj.com",
+      "telephone": siteData?.phone || "+1-000-000-0000",
+      "email": siteData?.email || "info@momentaj.com",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "#204, 15 Wertheim Ct",
+        "streetAddress": siteData?.address || "#204, 15 Wertheim Ct",
         "addressLocality": "Richmond Hill",
         "addressRegion": "ON",
         "postalCode": "L4B 3H7",
@@ -221,6 +246,13 @@ const twitterHandle = '@momentaj';
     })} />
   </head>
   <body class="min-h-screen flex flex-col">
+    <!-- Google Tag Manager (noscript) -->
+    {siteData?.google_tag_manager_id && (
+      <noscript>
+        <iframe src={`https://www.googletagmanager.com/ns.html?id=${siteData.google_tag_manager_id}`}
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+      </noscript>
+    )}
     <slot />
   </body>
 </html>

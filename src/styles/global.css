@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  /* Minimalist color palette - black, white, grays only */
+  /* Minimalist color palette - black text, blue actions */
   --color-color-primary: #000000;
   --color-color-primary-light: #1d1d1f;
   --color-color-accent: #0066cc;
@@ -40,7 +40,7 @@
     --color-color-text: #f5f5f7;
     --color-color-text-light: #86868b;
     --color-color-text-light2: #424245;
-    --color-color-bg: #000000;
+    --color-color-bg: #101010;
     --color-color-bg-alt: #161617;
     --color-color-border: #262629;
   }
@@ -64,12 +64,12 @@
   /* Premium buttons - Apple-like tactile feel */
   .btn-primary {
     @apply inline-flex items-center justify-center px-6 py-3 text-[13px] font-semibold rounded-full transition-all duration-200 ease-out hover:opacity-90 hover:scale-[1.02] active:scale-[0.98];
-    background-color: var(--color-color-primary);
-    color: var(--color-color-bg);
+    background-color: var(--color-color-accent);
+    color: #ffffff;
   }
  
   .dark .btn-primary {
-    @apply bg-white text-black;
+    @apply bg-color-accent text-white;
   }
   
   /* Secondary button */
@@ -150,7 +150,8 @@
 
   /* CTA section */
   .cta-section {
-    @apply rounded-[2.5rem] mx-4 md:mx-8 mb-8 overflow-hidden transition-all duration-500 bg-black;
+    @apply rounded-[2.5rem] mx-4 md:mx-8 mb-8 overflow-hidden transition-all duration-500;
+    background-color: #000000;
   }
 
   .dark .cta-section {

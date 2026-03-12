@@ -4,6 +4,9 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { getEntry } from 'astro:content';
 
+const settings = await getEntry('settings', 'settings');
+const siteData = settings?.data;
+
 const aboutPage = await getEntry('pages', 'about');
 
 if (!aboutPage) {
@@ -60,8 +63,8 @@ const values = [
 ---
 
 <BaseLayout 
-  title="About Us - Momentaj | Our Story & Team"
-  description="Learn about Momentaj, a leading software development and IT consulting company based in Toronto, and meet our team of experts."
+  title={siteData?.site_title ? `About Us - ${siteData.site_title}` : "About Us - Momentaj | Our Story & Team"}
+  description={siteData?.site_description || "Learn about Momentaj, a leading software development and IT consulting company based in Toronto, and meet our team of experts."}
 >
   <Header />
   
