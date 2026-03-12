@@ -53,6 +53,7 @@ const plainContentHtml = !isStructuredContent ? await renderMarkdown(caseStudy.c
 <BaseLayout 
   title={`${caseStudy.title} Case Study | Momentaj`}
   description={caseStudy.description}
+  keywords={`${caseStudy.tags?.join(', ')}, case study, software development, ${caseStudy.client}`}
 >
   <Header />
   

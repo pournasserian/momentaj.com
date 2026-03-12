@@ -52,6 +52,7 @@ const htmlContent = await marked.parse(service.content || '');
 <BaseLayout 
   title={`${service.title} | Momentaj Services`}
   description={service.short_description}
+  keywords={`${service.title}, software services, ${service.slug.replace(/-/g, ' ')}`}
 >
   <Header />
   

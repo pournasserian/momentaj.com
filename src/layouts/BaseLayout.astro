@@ -5,6 +5,7 @@ import { ClientRouter } from 'astro:transitions';
 interface Props {
   title?: string;
   description?: string;
+  keywords?: string;
   canonicalURL?: string;
   ogImage?: string;
   pageType?: 'website' | 'article';
@@ -17,6 +18,7 @@ interface Props {
 const {
   title = 'Momentaj - Tailored Software Solutions for Unique Business Needs',
   description = 'Momentaj is a software development and IT consulting company based in Toronto, providing customized solutions to businesses across various industries.',
+  keywords = 'software development, consulting, API integration, cloud devops, UI/UX design, Toronto software company',
   canonicalURL = Astro.url.href,
   ogImage = '/og-image.png',
   pageType = 'website',
@@ -42,9 +44,12 @@ const twitterHandle = '@momentaj';
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
     <meta name="author" content={author} />
     <meta name="robots" content="index, follow" />
     <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="google-site-verification" content="" />
     <link rel="alternate" hreflang="en" href={canonicalURL} />
     <link rel="alternate" hreflang="x-default" href={canonicalURL} />
     
@@ -96,6 +101,7 @@ const twitterHandle = '@momentaj';
     
     <!-- Resource Hints -->
     <link rel="preconnect" href="https://momentaj.com" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
 
     <script is:inline>
       const theme = (() => {

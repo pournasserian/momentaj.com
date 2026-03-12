@@ -2,15 +2,25 @@
 User-agent: *
 Allow: /
 
+# LLM Crawlers
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: CCBot
+Allow: /
+User-agent: Anthropic-AI
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+
 # Sitemaps
-Sitemap: https://momentaj.com/sitemap.xml
-
-# Crawl-delay (optional, for respectful crawling)
-Crawl-delay: 1
-
-# Disallow admin/private areas (if any)
-# Disallow: /admin/
-# Disallow: /private/
+Sitemap: https://momentaj.com/sitemap-index.xml
+Sitemap: https://momentaj.com/sitemap-0.xml
 
 # Host directive
 Host: https://momentaj.com

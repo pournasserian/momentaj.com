@@ -10,5 +10,18 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  integrations: [mdx(), sitemap()]
+  integrations: [mdx(), sitemap({
+    serialize(item) {
+      if (/services\/|case-studies\//.test(item.url)) {
+        // @ts-ignore
+        item.changefreq = 'monthly';
+        item.priority = 0.8;
+      } else {
+        // @ts-ignore
+        item.changefreq = 'weekly';
+        item.priority = 1.0;
+      }
+      return item;
+    },
+  })]
 });
