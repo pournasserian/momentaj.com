@@ -2,6 +2,30 @@ import yaml from 'js-yaml';
 import fs from 'fs';
 import path from 'path';
 
+// Astro glob imports for content (only JSON files)
+const globContent = import.meta.glob('/src/content/**/*.json', { eager: true });
+
+/**
+ * Get content from glob by path
+ */
+function getContentByPath(filePath: string): unknown {
+  return globContent[filePath];
+}
+
+/**
+ * Get all JSON files in a folder
+ */
+function getFilesInFolder(folderPath: string): Record<string, unknown> {
+  const result: Record<string, unknown> = {};
+  Object.keys(globContent).forEach(key => {
+    if (key.startsWith(folderPath) && key.endsWith('.json')) {
+      const slug = key.split('/').pop()?.replace('.json', '') || '';
+      result[slug] = globContent[key];
+    }
+  });
+  return result;
+}
+
 /**
  * @typedef {Object} Field
  * @property {string} name - Field name
@@ -316,19 +340,9 @@ export function validateCollection(collection, values) {
  * @returns {Array<Object>} Array of collection items
  */
 export function getCollectionItems(collection) {
-  const collectionPath = path.join(CONTENT_DIR, collection.folder);
-  
-  if (!fs.existsSync(collectionPath)) {
-    return [];
-  }
-
-  const files = fs.readdirSync(collectionPath).filter(file => file.endsWith('.json'));
-  
-  return files.map(file => {
-    const filePath = path.join(collectionPath, file);
-    const content = fs.readFileSync(filePath, 'utf-8');
-    return JSON.parse(content);
-  });
+  const folderPath = `/src/content/${collection.folder}`;
+  const files = getFilesInFolder(folderPath);
+  return Object.values(files);
 }
 
 /**
@@ -338,14 +352,8 @@ export function getCollectionItems(collection) {
  * @returns {Object|undefined} Item object
  */
 export function getCollectionItem(collection, slug) {
-  const itemPath = path.join(CONTENT_DIR, collection.folder, `${slug}.json`);
-  
-  if (!fs.existsSync(itemPath)) {
-    return undefined;
-  }
-
-  const content = fs.readFileSync(itemPath, 'utf-8');
-  return JSON.parse(content);
+  const itemPath = `/src/content/${collection.folder}/${slug}.json`;
+  return getContentByPath(itemPath);
 }
 
 /**
@@ -429,41 +437,22 @@ export function getSingletonCollections(config) {
  */
 export function getSingletonItem(collection) {
   if (!collection) return undefined;
-  
-  const collectionPath = path.join(CONTENT_DIR, collection.folder);
-  
-  if (!fs.existsSync(collectionPath)) {
-    return undefined;
-  }
 
-  // Use filename if specified, otherwise try to find any JSON file
+  // Use filename if specified, otherwise look for any JSON file
   const filename = collection.filename || 'default.json';
-  const itemPath = path.join(collectionPath, filename);
-  
-  if (!fs.existsSync(itemPath)) {
-    return undefined;
-  }
-
-  const content = fs.readFileSync(itemPath, 'utf-8');
-  return JSON.parse(content);
+  const itemPath = `/src/content/${collection.folder}/${filename}`;
+  return getContentByPath(itemPath);
 }
 
 /**
  * Save singleton item (uses fixed filename)
+ * Note: This requires filesystem access at runtime
  * @param {Object} collection - Singleton collection
  * @param {Object} data - Item data
  */
 export function saveSingletonItem(collection, data) {
-  const collectionPath = path.join(CONTENT_DIR, collection.folder);
-  
-  if (!fs.existsSync(collectionPath)) {
-    fs.mkdirSync(collectionPath, { recursive: true });
-  }
-
-  // Use filename if specified, otherwise use default.json
-  const filename = collection.filename || 'default.json';
-  const itemPath = path.join(collectionPath, filename);
-  fs.writeFileSync(itemPath, JSON.stringify(data, null, 2), 'utf-8');
+  // This is a build-time CMS, so saving would need to be handled differently
+  console.warn('saveSingletonItem: This function requires filesystem access');
 }
 
 // ===========================================
@@ -496,31 +485,20 @@ export function getPages(config) {
  */
 export function getPageContent(page) {
   if (!page) return undefined;
-  
-  const pagePath = path.join(CONTENT_DIR, page.folder, `${page.slug}.json`);
-  
-  if (!fs.existsSync(pagePath)) {
-    return undefined;
-  }
 
-  const content = fs.readFileSync(pagePath, 'utf-8');
-  return JSON.parse(content);
+  // Look for the page's slug file
+  const key = `/src/content/${page.folder}/${page.slug}.json`;
+  return getContentByPath(key);
 }
 
 /**
  * Save page content
+ * Note: This requires filesystem access at runtime
  * @param {Object} page - Page configuration
  * @param {Object} data - Page data including SEO
  */
 export function savePageContent(page, data) {
-  const pagePath = path.join(CONTENT_DIR, page.folder);
-  
-  if (!fs.existsSync(pagePath)) {
-    fs.mkdirSync(pagePath, { recursive: true });
-  }
-
-  const itemPath = path.join(pagePath, `${page.slug}.json`);
-  fs.writeFileSync(itemPath, JSON.stringify(data, null, 2), 'utf-8');
+  console.warn('savePageContent: This function requires filesystem access');
 }
 
 // ===========================================

@@ -3,8 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://momentaj.com/sitemap-index.xml
-Sitemap: https://momentaj.com/sitemap-0.xml
+Sitemap: https://momentaj.com/sitemap.xml
 
 # Crawl-delay (optional, for respectful crawling)
 Crawl-delay: 1

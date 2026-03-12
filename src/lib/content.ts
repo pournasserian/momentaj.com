@@ -3,11 +3,12 @@
  * This works with Astro's static site generation
  */
 
-import caseStudiesData from '../content/case-studies/*.json';
-import servicesData from '../content/services/*.json';
-import teamData from '../content/team/*.json';
-import testimonialsData from '../content/testimonials/*.json';
-import blogData from '../content/blog/*.json';
+// Import all JSON files using Astro's glob import
+const caseStudiesData = import.meta.glob('/src/content/case-studies/*.json', { eager: true });
+const servicesData = import.meta.glob('/src/content/services/*.json', { eager: true });
+const teamData = import.meta.glob('/src/content/team/*.json', { eager: true });
+const testimonialsData = import.meta.glob('/src/content/testimonials/*.json', { eager: true });
+const blogData = import.meta.glob('/src/content/blog/*.json', { eager: true });
 
 export interface CaseStudy {
   title: string;
@@ -67,7 +68,7 @@ export interface BlogPost {
  * Get all case studies, sorted by order
  */
 export function getCaseStudies(): CaseStudy[] {
-  const studies = Object.values(caseStudiesData) as CaseStudy[];
+  const studies = Object.values(caseStudiesData) as unknown as CaseStudy[];
   return studies.sort((a, b) => (a.order || 0) - (b.order || 0));
 }
 
@@ -82,15 +83,15 @@ export function getFeaturedCaseStudies(): CaseStudy[] {
  * Get a single case study by slug
  */
 export function getCaseStudyBySlug(slug: string): CaseStudy | undefined {
-  const studies = caseStudiesData as Record<string, CaseStudy>;
-  return studies[slug];
+  const key = `/src/content/case-studies/${slug}.json`;
+  return caseStudiesData[key] as unknown as CaseStudy;
 }
 
 /**
  * Get all services, sorted by order
  */
 export function getServices(): Service[] {
-  const services = Object.values(servicesData) as Service[];
+  const services = Object.values(servicesData) as unknown as Service[];
   return services.sort((a, b) => (a.order || 0) - (b.order || 0));
 }
 
@@ -105,15 +106,15 @@ export function getFeaturedServices(): Service[] {
  * Get a single service by slug
  */
 export function getServiceBySlug(slug: string): Service | undefined {
-  const services = servicesData as Record<string, Service>;
-  return services[slug];
+  const key = `/src/content/services/${slug}.json`;
+  return servicesData[key] as unknown as Service;
 }
 
 /**
  * Get all team members, sorted by order
  */
 export function getTeamMembers(): TeamMember[] {
-  const members = Object.values(teamData) as TeamMember[];
+  const members = Object.values(teamData) as unknown as TeamMember[];
   return members.sort((a, b) => (a.order || 0) - (b.order || 0));
 }
 
@@ -121,15 +122,15 @@ export function getTeamMembers(): TeamMember[] {
  * Get a single team member by slug
  */
 export function getTeamMemberBySlug(slug: string): TeamMember | undefined {
-  const members = teamData as Record<string, TeamMember>;
-  return members[slug];
+  const key = `/src/content/team/${slug}.json`;
+  return teamData[key] as unknown as TeamMember;
 }
 
 /**
  * Get all testimonials
  */
 export function getTestimonials(): Testimonial[] {
-  return Object.values(testimonialsData) as Testimonial[];
+  return Object.values(testimonialsData) as unknown as Testimonial[];
 }
 
 /**
@@ -143,7 +144,7 @@ export function getFeaturedTestimonials(): Testimonial[] {
  * Get all blog posts, sorted by date
  */
 export function getBlogPosts(): BlogPost[] {
-  const posts = Object.values(blogData) as BlogPost[];
+  const posts = Object.values(blogData) as unknown as BlogPost[];
   return posts.sort((a, b) => {
     if (!a.published_date) return 1;
     if (!b.published_date) return -1;
@@ -162,25 +163,25 @@ export function getFeaturedBlogPosts(): BlogPost[] {
  * Get a single blog post by slug
  */
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
-  const posts = blogData as Record<string, BlogPost>;
-  return posts[slug];
+  const key = `/src/content/blog/${slug}.json`;
+  return blogData[key] as unknown as BlogPost;
 }
 
 /**
  * Get all slugs for a collection (for dynamic routes)
  */
 export function getCaseStudySlugs(): string[] {
-  return Object.keys(caseStudiesData);
+  return Object.keys(caseStudiesData).map(key => key.split('/').pop()?.replace('.json', '') || '');
 }
 
 export function getServiceSlugs(): string[] {
-  return Object.keys(servicesData);
+  return Object.keys(servicesData).map(key => key.split('/').pop()?.replace('.json', '') || '');
 }
 
 export function getBlogPostSlugs(): string[] {
-  return Object.keys(blogData);
+  return Object.keys(blogData).map(key => key.split('/').pop()?.replace('.json', '') || '');
 }
 
 export function getTeamMemberSlugs(): string[] {
-  return Object.keys(teamData);
+  return Object.keys(teamData).map(key => key.split('/').pop()?.replace('.json', '') || '');
 }
