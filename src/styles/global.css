@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0f172a;
+  --color-primary-light: #1e293b;
+  --color-accent: #2563eb;
+  --color-accent-hover: #1d4ed8;
+  --color-color-text: #1f2937;
+  --color-color-text-light: #64748b;
+  --color-color-bg: #ffffff;
+  --color-color-bg-alt: #f8fafc;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-color-text);
+    background-color: var(--color-color-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    color: var(--color-primary);
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 font-medium rounded-lg transition-all duration-300;
+    background-color: var(--color-primary);
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--color-primary-light);
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.3);
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 border-2 font-medium rounded-lg transition-all duration-300;
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+  
+  .btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: white;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-4;
+    color: var(--color-primary);
+  }
+  
+  .section-subtitle {
+    @apply text-lg md:text-xl max-w-2xl;
+    color: var(--color-color-text-light);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(to right, var(--color-primary), var(--color-accent));
+  }
+}

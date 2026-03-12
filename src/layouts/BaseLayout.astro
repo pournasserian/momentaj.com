@@ -1,0 +1,192 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalURL?: string;
+  ogImage?: string;
+  pageType?: 'website' | 'article';
+  publishedTime?: string;
+  author?: string;
+  section?: string;
+  tags?: string[];
+}
+
+const {
+  title = 'Momentaj - Tailored Software Solutions for Unique Business Needs',
+  description = 'Momentaj is a software development and IT consulting company based in Toronto, providing customized solutions to businesses across various industries.',
+  canonicalURL = Astro.url.href,
+  ogImage = '/og-image.png',
+  pageType = 'website',
+  publishedTime,
+  author = 'Momentaj Inc',
+  section,
+  tags
+} = Astro.props;
+
+const siteName = 'Momentaj';
+const twitterHandle = '@momentaj';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="author" content={author} />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <link rel="alternate" hreflang="en" href={canonicalURL} />
+    <link rel="alternate" hreflang="x-default" href={canonicalURL} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={pageType} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title} />
+    
+    {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+    {author && <meta property="article:author" content={author} />}
+    {section && <meta property="article:section" content={section} />}
+    {tags && tags.map((tag) => <meta property="article:tag" content={tag} />)}
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={twitterHandle} />
+    <meta name="twitter:creator" content={twitterHandle} />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={title} />
+    
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Momentaj" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://momentaj.com" />
+    
+    <!-- Schema.org JSON-LD - Organization -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Momentaj Inc",
+      "url": "https://momentaj.com",
+      "logo": "https://momentaj.com/logo.png",
+      "description": "Software development and IT consulting company based in Toronto",
+      "foundingDate": "2019",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "#204, 15 Wertheim Ct",
+        "addressLocality": "Richmond Hill",
+        "addressRegion": "ON",
+        "postalCode": "L4B 3H7",
+        "addressCountry": "CA"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "info@momentaj.com",
+        "contactType": "customer service",
+        "availableLanguage": "English"
+      },
+      "sameAs": [
+        "https://ca.linkedin.com/company/momentaj"
+      ],
+      "areaServed": {
+        "@type": "Place",
+        "name": "Toronto, Canada"
+      },
+      "serviceType": [
+        "Software Development",
+        "Web Development",
+        "Mobile App Development",
+        "IT Consulting",
+        "Cloud Solutions"
+      ]
+    })} />
+    
+    <!-- Schema.org JSON-LD - WebSite -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Momentaj",
+      "url": "https://momentaj.com",
+      "description": "Software development and IT consulting services",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Momentaj Inc"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://momentaj.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    })} />
+    
+    <!-- Schema.org JSON-LD - ProfessionalService -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Momentaj Inc",
+      "image": "https://momentaj.com/logo.png",
+      "url": "https://momentaj.com",
+      "telephone": "+1-000-000-0000",
+      "email": "info@momentaj.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "#204, 15 Wertheim Ct",
+        "addressLocality": "Richmond Hill",
+        "addressRegion": "ON",
+        "postalCode": "L4B 3H7",
+        "addressCountry": "CA"
+      },
+      "priceRange": "$$",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "areaServed": ["Toronto", "Canada", "United States"],
+      "serviceType": [
+        "Custom Software Development",
+        "Web Application Development",
+        "Mobile Application Development",
+        "UI/UX Design",
+        "Cloud DevOps",
+        "IT Consulting"
+      ]
+    })} />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <slot />
+  </body>
+</html>

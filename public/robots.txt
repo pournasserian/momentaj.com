@@ -1,0 +1,17 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://momentaj.com/sitemap-index.xml
+Sitemap: https://momentaj.com/sitemap-0.xml
+
+# Crawl-delay (optional, for respectful crawling)
+Crawl-delay: 1
+
+# Disallow admin/private areas (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Host directive
+Host: https://momentaj.com

@@ -1,0 +1,9 @@
+{
+  "title": "Cloud & DevOps",
+  "slug": "cloud-devops",
+  "short_description": "Cloud infrastructure setup and DevOps practices for scalable, reliable applications.",
+  "content": "## Cloud & DevOps Services\n\nWe help you leverage cloud technologies and implement DevOps practices for faster delivery.\n\n### Cloud Services\n\n- Cloud architecture design\n- AWS, Azure, Google Cloud\n- Serverless computing\n- Cloud migration\n\n### DevOps Practices\n\n- CI/CD pipelines\n- Containerization (Docker, Kubernetes)\n- Infrastructure as Code\n- Monitoring & logging\n- Automated testing",
+  "icon": "cloud",
+  "featured": true,
+  "order": 4
+}

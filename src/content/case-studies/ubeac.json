@@ -1,0 +1,11 @@
+{
+  "title": "Ubeac",
+  "slug": "ubeac",
+  "client": "Ubeac",
+  "description": "IoT platform for unified building automation and control systems.",
+  "content": "## Overview\n\nUbeac provides IoT solutions for smart building management and automation.\n\n## Challenge\n\nThey needed a scalable platform to connect and manage various IoT devices across multiple buildings.\n\n## Solution\n\nWe developed a cloud-based IoT platform with real-time device monitoring, automation rules, and comprehensive analytics.\n\n## Results\n\n- Connected 50,000+ IoT devices\n- 30% energy savings for clients\n- Real-time monitoring and alerts",
+  "hero_image": "/images/case-studies/ubeac.jpg",
+  "tags": "IoT, smart building, automation, cloud",
+  "featured": true,
+  "order": 4
+}

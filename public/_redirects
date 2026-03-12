@@ -1,0 +1,11 @@
+# SEO Redirects Configuration
+# Add any URL redirects needed for SEO purposes
+
+# Example redirects (uncomment and modify as needed):
+# /old-page /new-page 301
+# /legacy /modern 301
+
+# If using Netlify, create _redirects file
+# If using Vercel, use vercel.json
+# If using Apache, use .htaccess
+# If using Nginx, use nginx.conf

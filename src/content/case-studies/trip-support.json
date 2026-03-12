@@ -1,0 +1,11 @@
+{
+  "title": "Trip Support",
+  "slug": "trip-support",
+  "client": "Trip Support",
+  "description": "Travel assistance platform for business and leisure travelers.",
+  "content": "## Overview\n\nTrip Support offers comprehensive travel assistance services for travelers worldwide.\n\n## Challenge\n\nThey needed a platform to manage travel bookings, emergency assistance, and customer support.\n\n## Solution\n\nWe built a comprehensive web application with booking management, real-time chat support, and integrated payment processing.\n\n## Results\n\n- 10,000+ monthly active users\n- 24/7 support availability\n- Seamless booking experience",
+  "hero_image": "/images/case-studies/trip-support.jpg",
+  "tags": "travel, booking, support, React",
+  "featured": true,
+  "order": 3
+}

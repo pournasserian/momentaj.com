@@ -1,0 +1,9 @@
+{
+  "title": "API Integration",
+  "slug": "api-integration",
+  "short_description": "Seamless integration with third-party APIs and services to connect your systems.",
+  "content": "## API Integration Services\n\nWe connect your systems with external services and APIs to streamline business processes.\n\n### Our Expertise\n\n- RESTful API development\n- GraphQL APIs\n- Third-party service integration\n- Payment gateway integration\n- Social media APIs\n- Financial data APIs\n\n### Benefits\n\n- Automated workflows\n- Real-time data sync\n- Reduced manual work\n- Improved efficiency",
+  "icon": "link",
+  "featured": true,
+  "order": 3
+}

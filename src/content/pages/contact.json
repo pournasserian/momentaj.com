@@ -1,0 +1,42 @@
+{
+  "page_title": "Contact Us",
+  "hero_image": "/media/pages/contact-hero.jpg",
+  "content": "## Get In Touch\n\nWe'd love to hear from you. Whether you have a question about our services, pricing, or anything else, our team is ready to answer all your questions.",
+  "show_contact_form": true,
+  "form_fields": [
+    {
+      "name": "name",
+      "type": "text",
+      "label": "Name",
+      "required": true
+    },
+    {
+      "name": "email",
+      "type": "email",
+      "label": "Email",
+      "required": true
+    },
+    {
+      "name": "company",
+      "type": "text",
+      "label": "Company",
+      "required": false
+    },
+    {
+      "name": "message",
+      "type": "textarea",
+      "label": "Message",
+      "required": true
+    }
+  ],
+  "form_email_to": "hello@momentaj.com",
+  "form_success_message": "Thank you for your message! We'll get back to you soon.",
+  "contact_info_title": "Other Ways to Reach Us",
+  "seo_title": "",
+  "seo_description": "",
+  "seo_keywords": "",
+  "seo_og_image": "",
+  "seo_canonical_url": "",
+  "seo_no_index": false,
+  "seo_no_follow": false
+}

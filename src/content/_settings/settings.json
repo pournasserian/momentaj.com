@@ -1,0 +1,14 @@
+{
+  "site_name": "Momentaj",
+  "site_description": "Professional software development and consulting services",
+  "logo": "/media/logo.svg",
+  "favicon": "/favicon.ico",
+  "email": "hello@momentaj.com",
+  "phone": "+1 234 567 8900",
+  "address": "123 Tech Street, San Francisco, CA 94102",
+  "social_links": {
+    "linkedin": "https://linkedin.com/company/momentaj",
+    "twitter": "https://twitter.com/momentaj",
+    "github": "https://github.com/momentaj"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "site_title": "Momentaj - Software Development & Consulting",
+  "site_keywords": "software development, consulting, API integration, cloud devops, UI/UX design",
+  "og_image": "/media/og-default.jpg",
+  "google_analytics_id": "",
+  "google_tag_manager_id": "",
+  "robots_txt": "Allow: /\nDisallow: /api/\nDisallow: /_"
+}

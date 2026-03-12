@@ -1,0 +1,335 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { getFeaturedCaseStudies, getServices } from '../lib/content';
+
+// Load content from CMS
+const featuredCaseStudies = getFeaturedCaseStudies().slice(0, 3);
+const services = getServices().slice(0, 6);
+
+const features = [
+  {
+    title: 'On-demand, Flexible',
+    description: 'Our on-demand, flexible approach to software development and IT consulting allows businesses to meet their unique needs and scale their services as required.',
+    icon: 'flexible'
+  },
+  {
+    title: 'Cost Benefit',
+    description: "Momentaj's cost-effective solutions provide businesses with a high-quality, reliable service that is both affordable and sustainable.",
+    icon: 'cost'
+  },
+  {
+    title: 'Agile Team',
+    description: 'Our agile team of experts is responsive, collaborative, and highly skilled in developing software solutions and providing IT consultation services.',
+    icon: 'agile'
+  },
+  {
+    title: 'Eliminate Risk',
+    description: "With our expertise in software development and IT consultation, we help businesses eliminate risk and ensure that their systems are reliable, efficient, and secure.",
+    icon: 'risk'
+  }
+];
+
+const techStack = {
+  frontend: ['Angular', 'Svelte', 'Vue.js', 'React', 'TailwindCSS', 'HTML', 'CSS', 'SCSS', 'jQuery', 'JavaScript'],
+  backend: ['ASP.NET Core', 'ASP.NET Framework', 'Blazor', 'Node.js', 'Python', 'PyTorch', 'TensorFlow'],
+  mobile: ['Android', 'iOS', 'Xamarin', 'Flutter', 'Kotlin'],
+  database: ['MS SQL Server', 'MySQL', 'SQLite', 'MongoDB'],
+  cloud: ['Azure', 'AWS', 'Google Cloud']
+};
+---
+
+<BaseLayout title="Momentaj - Tailored Software Solutions for Unique Business Needs">
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-20 bg-slate-50">
+      <div class="container-custom">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
+              <span class="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
+              <span class="text-sm font-medium text-primary">Based in Toronto, Canada</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight mb-6">
+              Best For Your <span class="text-gradient">Success.</span>
+            </h1>
+            <p class="text-xl text-slate-600 leading-relaxed mb-8">
+              Tailored software solutions for unique business needs. Based in Toronto, Momentaj is a software development and IT consulting company that provides customized solutions to businesses across various industries.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a href="/services" class="btn-primary">
+                Get Started
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+              <a href="/contact-us" class="btn-secondary">
+                Free Consultation
+              </a>
+            </div>
+          </div>
+          <div class="relative hidden lg:block">
+            <div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-3xl blur-3xl"></div>
+            <div class="relative bg-white rounded-3xl shadow-2xl p-8 border border-slate-100">
+              <div class="grid grid-cols-2 gap-6">
+                <div class="text-center p-6 bg-slate-50 rounded-2xl">
+                  <div class="text-4xl font-bold text-primary mb-2">5+</div>
+                  <div class="text-sm text-slate-500">Years Experience</div>
+                </div>
+                <div class="text-center p-6 bg-slate-50 rounded-2xl">
+                  <div class="text-4xl font-bold text-primary mb-2">50+</div>
+                  <div class="text-sm text-slate-500">Projects Completed</div>
+                </div>
+                <div class="text-center p-6 bg-slate-50 rounded-2xl">
+                  <div class="text-4xl font-bold text-primary mb-2">30+</div>
+                  <div class="text-sm text-slate-500">Clients Worldwide</div>
+                </div>
+                <div class="text-center p-6 bg-slate-50 rounded-2xl">
+                  <div class="text-4xl font-bold text-primary mb-2">99%</div>
+                  <div class="text-sm text-slate-500">Client Satisfaction</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <svg class="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- Why Momentaj -->
+    <section class="section-padding bg-white">
+      <div class="container-custom">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="section-title">Why Momentaj</h2>
+          <p class="section-subtitle mx-auto">
+            We deliver excellence through our commitment to quality, innovation, and client success.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {features.map((feature) => (
+            <div class="group p-8 bg-slate-50 rounded-2xl hover:bg-primary hover:text-white transition-all duration-300 hover:shadow-xl">
+              <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-white/20">
+                <svg class="w-6 h-6 text-accent group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  {feature.icon === 'flexible' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />}
+                  {feature.icon === 'cost' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />}
+                  {feature.icon === 'agile' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />}
+                  {feature.icon === 'risk' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />}
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-3">{feature.title}</h3>
+              <p class="text-sm leading-relaxed opacity-80 group-hover:text-white/90">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section-padding bg-slate-50">
+      <div class="container-custom">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="section-title">What We Offer</h2>
+          <p class="section-subtitle mx-auto">
+            We offer a wide range of services to help you achieve your business goals.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service) => (
+            <a href={`/services/${service.slug}`} class="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-primary mb-3 group-hover:text-accent transition-colors">
+                {service.title}
+              </h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                {service.short_description}
+              </p>
+              <span class="inline-flex items-center gap-2 text-accent font-medium text-sm group-hover:gap-3 transition-all">
+                Learn more
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </a>
+          ))}
+        </div>
+        
+        <div class="text-center mt-12">
+          <a href="/services" class="btn-secondary">
+            View All Services
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="section-padding bg-white">
+      <div class="container-custom">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="section-title">Our Tech Stack</h2>
+          <p class="section-subtitle mx-auto">
+            Our cutting-edge software stacks utilize the latest technologies and industry best practices.
+          </p>
+        </div>
+        
+        <div class="space-y-8">
+          <!-- Frontend -->
+          <div>
+            <h3 class="text-lg font-semibold text-primary mb-4 flex items-center gap-2">
+              <span class="w-2 h-2 bg-accent rounded-full"></span>
+              Front-end
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              {techStack.frontend.map((tech) => (
+                <span class="px-4 py-2 bg-slate-100 rounded-lg text-sm font-medium text-slate-700 hover:bg-primary hover:text-white transition-colors cursor-default">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+          
+          <!-- Backend -->
+          <div>
+            <h3 class="text-lg font-semibold text-primary mb-4 flex items-center gap-2">
+              <span class="w-2 h-2 bg-accent rounded-full"></span>
+              Back-end
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              {techStack.backend.map((tech) => (
+                <span class="px-4 py-2 bg-slate-100 rounded-lg text-sm font-medium text-slate-700 hover:bg-primary hover:text-white transition-colors cursor-default">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+          
+          <!-- Mobile -->
+          <div>
+            <h3 class="text-lg font-semibold text-primary mb-4 flex items-center gap-2">
+              <span class="w-2 h-2 bg-accent rounded-full"></span>
+              Mobile
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              {techStack.mobile.map((tech) => (
+                <span class="px-4 py-2 bg-slate-100 rounded-lg text-sm font-medium text-slate-700 hover:bg-primary hover:text-white transition-colors cursor-default">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+          
+          <!-- Database -->
+          <div>
+            <h3 class="text-lg font-semibold text-primary mb-4 flex items-center gap-2">
+              <span class="w-2 h-2 bg-accent rounded-full"></span>
+              Database
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              {techStack.database.map((tech) => (
+                <span class="px-4 py-2 bg-slate-100 rounded-lg text-sm font-medium text-slate-700 hover:bg-primary hover:text-white transition-colors cursor-default">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+          
+          <!-- Cloud -->
+          <div>
+            <h3 class="text-lg font-semibold text-primary mb-4 flex items-center gap-2">
+              <span class="w-2 h-2 bg-accent rounded-full"></span>
+              Cloud
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              {techStack.cloud.map((tech) => (
+                <span class="px-4 py-2 bg-slate-100 rounded-lg text-sm font-medium text-slate-700 hover:bg-primary hover:text-white transition-colors cursor-default">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="section-padding bg-slate-50">
+      <div class="container-custom">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="section-title">Case Studies</h2>
+          <p class="section-subtitle mx-auto">
+            We specialize in creating tailored solutions for a variety of needs, from custom software development to IT consulting.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {featuredCaseStudies.map((study) => (
+            <a href={`/case-studies/${study.slug}`} class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
+              <div class="h-48 bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                <svg class="w-24 h-24 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div class="p-8">
+                <h3 class="text-xl font-semibold text-primary mb-1 group-hover:text-accent transition-colors">{study.title}</h3>
+                <p class="text-accent text-sm font-medium mb-4">{study.client}</p>
+                <div class="space-y-2 text-sm text-slate-600">
+                  {study.tags && (
+                    <p><span class="font-medium text-slate-900">Services:</span> {study.tags}</p>
+                  )}
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+        
+        <div class="text-center mt-12">
+          <a href="/case-studies" class="btn-secondary">
+            View All Case Studies
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-padding bg-primary relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
+      </div>
+      <div class="container-custom relative">
+        <div class="text-center max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+            Ready to Transform Your Business?
+          </h2>
+          <p class="text-xl text-white/80 mb-8">
+            Let's discuss how we can help you achieve your business goals with our tailored software solutions.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="/contact-us" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-slate-100 transition-colors">
+              Get Started
+            </a>
+            <a href="/services" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors">
+              Our Services
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</BaseLayout>

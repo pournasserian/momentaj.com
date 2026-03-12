@@ -1,0 +1,32 @@
+{
+  "page_title": "About Us",
+  "hero_image": "/media/pages/about-hero.jpg",
+  "content": "## Who We Are\n\nMomentaj is a premier software development and consulting company dedicated to helping businesses transform their digital presence. With years of experience and a team of skilled developers, we deliver tailored solutions that meet unique business needs.\n\n## Our Mission\n\nTo empower businesses with innovative software solutions that drive growth and efficiency.",
+  "team_section_title": "Meet Our Team",
+  "team_section_content": "Our team consists of experienced developers, designers, and consultants who are passionate about technology and innovation.",
+  "values_section_title": "Our Values",
+  "values": [
+    {
+      "title": "Innovation",
+      "description": "We constantly push boundaries to deliver cutting-edge solutions",
+      "icon": "lightbulb"
+    },
+    {
+      "title": "Excellence",
+      "description": "Quality is at the heart of everything we do",
+      "icon": "star"
+    },
+    {
+      "title": "Collaboration",
+      "description": "We work closely with clients as partners in success",
+      "icon": "users"
+    }
+  ],
+  "seo_title": "",
+  "seo_description": "",
+  "seo_keywords": "",
+  "seo_og_image": "",
+  "seo_canonical_url": "",
+  "seo_no_index": false,
+  "seo_no_follow": false
+}

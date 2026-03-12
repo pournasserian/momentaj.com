@@ -1,0 +1,9 @@
+{
+  "title": "Web & Mobile Development",
+  "slug": "web-mobile-development",
+  "short_description": "Responsive websites and cross-platform mobile applications that engage your users.",
+  "content": "## Web & Mobile Development\n\nWe create stunning web and mobile experiences that drive user engagement and business growth.\n\n### Web Development\n\n- Responsive websites\n- Progressive web apps (PWA)\n- E-commerce solutions\n- Content management systems\n\n### Mobile Development\n\n- iOS apps (Swift)\n- Android apps (Kotlin)\n- Cross-platform (React Native, Flutter)\n- Mobile API development",
+  "icon": "mobile",
+  "featured": true,
+  "order": 2
+}
