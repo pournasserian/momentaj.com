@@ -3,9 +3,19 @@
   "slug": "trip-support",
   "client": "Trip Support",
   "description": "Travel assistance platform for business and leisure travelers.",
-  "content": "## Overview\n\nTrip Support offers comprehensive travel assistance services for travelers worldwide.\n\n## Challenge\n\nThey needed a platform to manage travel bookings, emergency assistance, and customer support.\n\n## Solution\n\nWe built a comprehensive web application with booking management, real-time chat support, and integrated payment processing.\n\n## Results\n\n- 10,000+ monthly active users\n- 24/7 support availability\n- Seamless booking experience",
+  "content": {
+    "overview": "Trip Support offers comprehensive travel assistance services for travelers worldwide.",
+    "challenge": "They needed a platform to manage travel bookings, emergency assistance, and customer support.",
+    "solution": "We built a comprehensive web application with booking management, real-time chat support, and integrated payment processing.",
+    "results": "The platform handles 10,000+ monthly active users with 24/7 support availability and a seamless booking experience."
+  },
+  "stats": {
+    "duration": "8 Months",
+    "teamSize": "6 Members",
+    "technologies": ["React", "Next.js", "Node.js", "Stripe"]
+  },
   "hero_image": "/images/case-studies/trip-support.jpg",
-  "tags": "travel, booking, support, React",
+  "tags": "Travel, Booking, Support, React",
   "featured": true,
   "order": 3
 }

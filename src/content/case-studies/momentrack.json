@@ -3,9 +3,19 @@
   "slug": "momentrack",
   "client": "Momentrack",
   "description": "Real-time tracking solution for logistics and fleet management.",
-  "content": "## Overview\n\nMomentrack provides GPS tracking and fleet management solutions for businesses.\n\n## Challenge\n\nThey needed a real-time tracking dashboard that could handle thousands of vehicles and provide accurate location data.\n\n## Solution\n\nWe developed a scalable web application with WebSocket integration for real-time updates and an intuitive map interface.\n\n## Results\n\n- Real-time tracking of 5000+ vehicles\n- 99.9% uptime\n- Advanced reporting and analytics",
+  "content": {
+    "overview": "Momentrack provides GPS tracking and fleet management solutions for businesses.",
+    "challenge": "They needed a real-time tracking dashboard that could handle thousands of vehicles and provide accurate location data.",
+    "solution": "We developed a scalable web application with WebSocket integration for real-time updates and an intuitive map interface.",
+    "results": "The system now tracks 5000+ vehicles in real-time with 99.9% uptime and provides advanced reporting and analytics."
+  },
+  "stats": {
+    "duration": "6 Months",
+    "teamSize": "5 Members",
+    "technologies": ["React", "Node.js", "Socket.io", "MongoDB"]
+  },
   "hero_image": "/images/case-studies/momentrack.jpg",
-  "tags": "GPS, tracking, logistics, real-time",
+  "tags": "GPS, Tracking, Logistics, Real-time",
   "featured": true,
   "order": 2
 }

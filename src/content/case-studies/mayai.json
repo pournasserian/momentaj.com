@@ -1,0 +1,12 @@
+{
+  "title": "MayAI - AI Powered Home Assistant",
+  "slug": "mayai",
+  "client": "Internal Project",
+  "description": "MayAI is a sophisticated AI-powered home assistant designed to provide seamless control and intelligent automation for modern homes. Hosted at mayai.momentaj.com.",
+  "content": "MayAI is a sophisticated AI-powered home assistant designed to provide seamless control and intelligent automation for modern homes. Hosted at mayai.momentaj.com.",
+  "hero_image": "/images/case-studies/mayai.jpg",
+  "tags": "AI, IoT, Home Automation, LLM",
+  "featured": true,
+  "order": 3,
+  "url": "https://mayai.momentaj.com"
+}

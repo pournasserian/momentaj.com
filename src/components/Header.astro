@@ -1,35 +1,33 @@
 ---
-const navLinks = [
-  { name: 'Home', href: '/' },
-  { name: 'Services', href: '/services' },
-  { name: 'Case Studies', href: '/case-studies' },
-  { name: 'About Us', href: '/about-us' },
-  { name: 'Contact Us', href: '/contact-us' },
-];
+import { getEntry } from 'astro:content';
+
+const navigation = await getEntry('navigation', 'navigation');
+const navLinks = navigation?.data?.items
+  ? [...navigation.data.items]
+      .sort((a, b) => a.order - b.order)
+      .map(item => ({ name: item.label, href: item.url }))
+  : [];
 
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100">
+<header class="fixed top-0 left-0 right-0 z-50 bg-color-bg/80 backdrop-blur-xl border-b border-color-border/50 transition-all duration-300">
   <div class="container-custom">
-    <nav class="flex items-center justify-between h-20">
-      <!-- Logo -->
-      <a href="/" class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-          <span class="text-white font-bold text-xl">M</span>
-        </div>
-        <span class="text-xl font-bold text-primary">Momentaj</span>
+    <nav class="flex items-center justify-between h-16 md:h-20">
+      <!-- Logo - Simple -->
+      <a href="/" class="flex items-center gap-2 group">
+        <span class="text-xl font-semibold text-color-primary tracking-tight group-hover:opacity-70 transition-opacity">Momentaj</span>
       </a>
 
-      <!-- Desktop Navigation -->
-      <ul class="hidden lg:flex items-center gap-8">
+      <!-- Desktop Navigation - Clean and minimal -->
+      <ul class="hidden lg:flex items-center gap-10">
         {navLinks.map((link) => (
           <li>
             <a
               href={link.href}
               class:list={[
-                'text-sm font-medium transition-colors duration-200 hover:text-accent',
-                currentPath === link.href ? 'text-accent' : 'text-slate-700'
+                'text-[13px] font-medium transition-all duration-300 hover:opacity-100',
+                currentPath === link.href ? 'text-color-primary' : 'text-color-text-light hover:text-color-primary'
               ]}
             >
               {link.name}
@@ -38,37 +36,63 @@ const currentPath = Astro.url.pathname;
         ))}
       </ul>
 
-      <!-- CTA Button -->
-      <div class="hidden lg:block">
-        <a href="/contact-us" class="btn-primary">
+      <!-- Actions - Minimal -->
+      <div class="hidden lg:flex items-center gap-6">
+        <button
+          id="theme-toggle"
+          class="p-2 text-color-text-light hover:text-color-primary transition-all duration-300 hover:scale-110"
+          aria-label="Toggle theme"
+        >
+          <svg id="sun-icon" class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.364 17.364l-.707.707M6.364 6.364l.707.707m12.728 12.728l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+          </svg>
+          <svg id="moon-icon" class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+          </svg>
+        </button>
+        <a href="/contact-us" class="btn-primary !py-2.5 !px-6 !text-xs">
           Get Started
         </a>
       </div>
 
       <!-- Mobile Menu Button -->
-      <button
-        id="mobile-menu-btn"
-        class="lg:hidden p-2 text-slate-700 hover:text-accent"
-        aria-label="Toggle menu"
-      >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
+      <div class="flex items-center gap-2 lg:hidden">
+        <button
+          id="theme-toggle-mobile"
+          class="p-2 text-color-text-light hover:text-color-primary transition-colors"
+          aria-label="Toggle theme"
+        >
+          <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.364 17.364l-.707.707M6.364 6.364l.707.707m12.728 12.728l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+          </svg>
+          <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+          </svg>
+        </button>
+        <button
+          id="mobile-menu-btn"
+          class="p-2 text-color-text"
+          aria-label="Toggle menu"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="menu-icon-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
     </nav>
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100">
-    <div class="container-custom py-4">
-      <ul class="space-y-4">
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-color-border/50 bg-color-bg/95 backdrop-blur-xl absolute w-full left-0 top-full h-screen overflow-y-auto">
+    <div class="container-custom py-10">
+      <ul class="space-y-6">
         {navLinks.map((link) => (
           <li>
             <a
               href={link.href}
               class:list={[
-                'block py-2 text-base font-medium transition-colors duration-200 hover:text-accent',
-                currentPath === link.href ? 'text-accent' : 'text-slate-700'
+                'block py-2 text-2xl font-semibold tracking-tight transition-all duration-300',
+                currentPath === link.href ? 'text-color-primary' : 'text-color-text-light'
               ]}
             >
               {link.name}
@@ -76,8 +100,8 @@ const currentPath = Astro.url.pathname;
           </li>
         ))}
       </ul>
-      <div class="mt-4">
-        <a href="/contact-us" class="btn-primary w-full text-center">
+      <div class="mt-12">
+        <a href="/contact-us" class="btn-primary w-full text-center !py-4 !text-base">
           Get Started
         </a>
       </div>
@@ -86,10 +110,46 @@ const currentPath = Astro.url.pathname;
 </header>
 
 <script>
-  const btn = document.getElementById('mobile-menu-btn');
-  const menu = document.getElementById('mobile-menu');
-  
-  btn?.addEventListener('click', () => {
-    menu?.classList.toggle('hidden');
-  });
+  const setupHeader = () => {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const menuIconPath = document.getElementById('menu-icon-path');
+    
+    btn?.addEventListener('click', () => {
+      const isHidden = menu?.classList.contains('hidden');
+      menu?.classList.toggle('hidden');
+      
+      if (isHidden) {
+        menuIconPath?.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+        document.body.style.overflow = 'hidden';
+      } else {
+        menuIconPath?.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+        document.body.style.overflow = '';
+      }
+    });
+
+    const handleToggleClick = () => {
+      const element = document.documentElement;
+      element.classList.toggle("dark");
+
+      const isDark = element.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    };
+
+    document.getElementById("theme-toggle")?.addEventListener("click", handleToggleClick);
+    document.getElementById("theme-toggle-mobile")?.addEventListener("click", handleToggleClick);
+
+    // Header scroll effect
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        header?.classList.add('py-1');
+      } else {
+        header?.classList.remove('py-1');
+      }
+    });
+  };
+
+  setupHeader();
+  document.addEventListener('astro:after-swap', setupHeader);
 </script>

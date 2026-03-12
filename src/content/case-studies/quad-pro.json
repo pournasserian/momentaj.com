@@ -1,0 +1,21 @@
+{
+  "title": "Quad Pro",
+  "slug": "quad-pro",
+  "client": "Quad Pro",
+  "description": "A specialized management system for quad bike rentals and tours.",
+  "content": {
+    "overview": "Quad Pro offers adventure tours and quad bike rentals. They needed a dedicated system to manage their fleet, bookings, and customer waivers.",
+    "challenge": "The manual tracking of bike maintenance and paper-based waiver systems were prone to errors and difficult to manage during peak seasons.",
+    "solution": "We developed a custom management portal that tracks bike availability, schedules maintenance, and digitizes the customer waiver process with electronic signatures.",
+    "results": "Quad Pro improved their operational efficiency by 40%, reduced paperwork, and ensured better safety compliance through automated maintenance alerts."
+  },
+  "stats": {
+    "duration": "3 Months",
+    "teamSize": "2 Members",
+    "technologies": ["Vue.js", "Firebase", "Tailwind CSS"]
+  },
+  "hero_image": "/images/case-studies/quad-pro.jpg",
+  "tags": "Custom Software, Management System, Adventure Sports",
+  "featured": false,
+  "order": 8
+}

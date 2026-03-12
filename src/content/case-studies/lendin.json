@@ -3,9 +3,19 @@
   "slug": "lendin",
   "client": "Lendin",
   "description": "A fintech lending platform providing quick and easy loans with seamless digital experience.",
-  "content": "## Overview\n\nLendin is a leading fintech company that needed a modern web platform to streamline their lending process.\n\n## Challenge\n\nThey needed a fast, secure, and user-friendly platform that could handle complex loan applications while maintaining excellent performance.\n\n## Solution\n\nWe built a responsive web application using React and Node.js, integrating with multiple payment gateways and credit bureaus.\n\n## Results\n\n- 40% increase in loan applications\n- 60% reduction in processing time\n- 95% customer satisfaction rate",
+  "content": {
+    "overview": "Lendin is a leading fintech company that needed a modern web platform to streamline their lending process.",
+    "challenge": "They needed a fast, secure, and user-friendly platform that could handle complex loan applications while maintaining excellent performance.",
+    "solution": "We built a responsive web application using React and Node.js, integrating with multiple payment gateways and credit bureaus.",
+    "results": "The platform saw a 40% increase in loan applications and a 60% reduction in processing time, with a 95% customer satisfaction rate."
+  },
+  "stats": {
+    "duration": "5 Months",
+    "teamSize": "4 Members",
+    "technologies": ["React", "Node.js", "AWS", "PostgreSQL"]
+  },
   "hero_image": "/images/case-studies/lendin.jpg",
-  "tags": "fintech, lending, React, Node.js",
+  "tags": "Fintech, Lending, React, Node.js",
   "featured": true,
   "order": 1
 }

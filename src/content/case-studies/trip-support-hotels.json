@@ -1,0 +1,21 @@
+{
+  "title": "Trip Support Hotels",
+  "slug": "trip-support-hotels",
+  "client": "Trip Support",
+  "description": "Global hotel booking system with real-time availability and pricing.",
+  "content": {
+    "overview": "Following the success of the flight engine, Trip Support tasked us with rebuilding their hotel booking module to provide a world-class experience for travelers seeking accommodations.",
+    "challenge": "Managing millions of hotel listings with real-time updates on availability and pricing required a highly scalable and reliable infrastructure. The system also needed to support complex booking rules and cancellations.",
+    "solution": "We built a scalable hotel booking platform using a distributed system architecture, integrated with major hotel aggregators, and implemented an advanced caching layer to ensure rapid response times.",
+    "results": "The new hotel system successfully handled high traffic volumes and provided a seamless booking experience, contributing to a significant growth in Trip Support's overall travel revenue."
+  },
+  "stats": {
+    "duration": "5 Months",
+    "teamSize": "4 Members",
+    "technologies": ["TypeScript", "Go", "PostgreSQL", "Elasticsearch"]
+  },
+  "hero_image": "/images/case-studies/trip-support-hotels.jpg",
+  "tags": "Web Development, Travel, Scalability",
+  "featured": true,
+  "order": 7
+}

@@ -1,0 +1,9 @@
+{
+  "title": "AI Consultation & Development",
+  "slug": "ai-consultation",
+  "short_description": "Leverage the power of Artificial Intelligence to automate processes, gain insights, and build next-generation intelligent applications.",
+  "content": "We help businesses integrate AI into their workflows, from custom LLM implementations to predictive analytics and automated decision-making systems.",
+  "icon": "lightbulb",
+  "order": 1,
+  "featured": true
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Marvic Holidays",
+  "slug": "marvic-holidays",
+  "client": "Marvic Holidays",
+  "description": "A comprehensive travel booking platform for holiday packages and tours.",
+  "content": {
+    "overview": "Marvic Holidays is a premier travel agency specializing in curated holiday packages. They needed a modern, responsive platform to showcase their offerings and streamline the booking process for customers.",
+    "challenge": "The existing system was manual and lacked a centralized platform for customers to explore packages, check availability, and make bookings. This led to inefficiencies and missed opportunities.",
+    "solution": "We developed a custom web application with a robust backend to manage holiday packages, integrated with a secure payment gateway and an intuitive user interface for seamless browsing and booking.",
+    "results": "The new platform significantly increased online bookings, improved customer engagement through high-quality visual content, and automated the booking management process for the Marvic team."
+  },
+  "stats": {
+    "duration": "4 Months",
+    "teamSize": "3 Members",
+    "technologies": ["React", "Node.js", "MongoDB", "Stripe"]
+  },
+  "hero_image": "/images/case-studies/marvic-holidays.jpg",
+  "tags": "Web Development, Travel, E-commerce",
+  "featured": true,
+  "order": 5
+}

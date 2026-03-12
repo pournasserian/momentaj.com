@@ -1,0 +1,21 @@
+{
+  "title": "Trip Support Flights",
+  "slug": "trip-support-flights",
+  "client": "Trip Support",
+  "description": "Advanced flight search and booking engine integration.",
+  "content": {
+    "overview": "Trip Support is a major player in the travel industry. This project focused on enhancing their flight booking capabilities by integrating multiple GDS and LCC providers into a unified, high-performance search engine.",
+    "challenge": "Integrating diverse flight data sources while maintaining fast search speeds and accurate pricing was a significant technical hurdle. The UI also needed to handle complex filtering and multi-city itineraries.",
+    "solution": "We implemented a microservices architecture to handle API integrations, optimized search algorithms for speed, and designed a user-friendly interface that simplifies the flight selection process.",
+    "results": "The enhanced flight engine led to a 30% increase in conversion rates and provided users with a much wider range of flight options and competitive pricing."
+  },
+  "stats": {
+    "duration": "6 Months",
+    "teamSize": "5 Members",
+    "technologies": ["Next.js", "Python", "Redis", "Amadeus API"]
+  },
+  "hero_image": "/images/case-studies/trip-support-flights.jpg",
+  "tags": "API Integration, Travel, Performance Optimization",
+  "featured": true,
+  "order": 6
+}

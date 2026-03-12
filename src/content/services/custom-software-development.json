@@ -5,5 +5,5 @@
   "content": "## Custom Software Development Services\n\nWe build robust, scalable, and secure custom software solutions tailored to your specific business needs.\n\n### Our Approach\n\n1. **Requirements Analysis** - We deeply understand your business processes\n2. **Architecture Design** - We create scalable system architectures\n3. **Agile Development** - Iterative development with continuous feedback\n4. **Quality Assurance** - Rigorous testing at every stage\n5. **Deployment & Support** - Smooth deployment and ongoing maintenance\n\n### Technologies We Use\n\n- Frontend: React, Vue.js, Angular\n- Backend: Node.js, Python, Java, .NET\n- Databases: PostgreSQL, MongoDB, MySQL\n- Cloud: AWS, Azure, Google Cloud",
   "icon": "code",
   "featured": true,
-  "order": 1
+  "order": 2
 }

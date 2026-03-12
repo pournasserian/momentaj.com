@@ -3,9 +3,19 @@
   "slug": "ubeac",
   "client": "Ubeac",
   "description": "IoT platform for unified building automation and control systems.",
-  "content": "## Overview\n\nUbeac provides IoT solutions for smart building management and automation.\n\n## Challenge\n\nThey needed a scalable platform to connect and manage various IoT devices across multiple buildings.\n\n## Solution\n\nWe developed a cloud-based IoT platform with real-time device monitoring, automation rules, and comprehensive analytics.\n\n## Results\n\n- Connected 50,000+ IoT devices\n- 30% energy savings for clients\n- Real-time monitoring and alerts",
+  "content": {
+    "overview": "Ubeac provides IoT solutions for smart building management and automation.",
+    "challenge": "They needed a scalable platform to connect and manage various IoT devices across multiple buildings.",
+    "solution": "We developed a cloud-based IoT platform with real-time device monitoring, automation rules, and comprehensive analytics.",
+    "results": "The platform has connected 50,000+ IoT devices, resulting in 30% energy savings for clients and real-time monitoring and alerts."
+  },
+  "stats": {
+    "duration": "12 Months",
+    "teamSize": "8 Members",
+    "technologies": ["Angular", ".NET Core", "Azure IoT Hub", "CosmosDB"]
+  },
   "hero_image": "/images/case-studies/ubeac.jpg",
-  "tags": "IoT, smart building, automation, cloud",
+  "tags": "IoT, Smart Building, Automation, Cloud",
   "featured": true,
   "order": 4
 }

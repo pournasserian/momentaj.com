@@ -1,0 +1,22 @@
+{
+  "title": "FluentCMS",
+  "slug": "fluentcms",
+  "client": "Open Source",
+  "description": "A modern, headless CMS built for speed and flexibility.",
+  "content": {
+    "overview": "FluentCMS is an open-source headless CMS designed to provide developers with a flexible and powerful way to manage content across multiple platforms.",
+    "challenge": "Many existing CMS solutions are either too complex or too restrictive, making it difficult for developers to build custom content-driven applications efficiently.",
+    "solution": "We developed FluentCMS with a focus on simplicity and extensibility, providing a clean API and a user-friendly interface for content management.",
+    "results": "FluentCMS has become a popular choice for developers looking for a lightweight and flexible CMS, enabling them to build and deploy content-rich applications faster than ever before."
+  },
+  "stats": {
+    "duration": "Ongoing",
+    "teamSize": "Core Team",
+    "technologies": [".NET", "React", "PostgreSQL"]
+  },
+  "hero_image": "/images/case-studies/fluentcms.jpg",
+  "tags": "Open Source, CMS, Headless",
+  "featured": true,
+  "order": 1,
+  "url": "https://fluentcms.org"
+}

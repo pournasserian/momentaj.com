@@ -2,28 +2,22 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { getCaseStudies } from '../lib/content';
+import { getCollection } from 'astro:content';
 
 // Load case studies from CMS
-const caseStudies = getCaseStudies();
-
-// Color mapping for case study cards
-const colors = [
-  'from-blue-500 to-blue-700',
-  'from-purple-500 to-purple-700',
-  'from-green-500 to-green-700',
-  'from-orange-500 to-orange-700',
-  'from-red-500 to-red-700',
-  'from-teal-500 to-teal-700'
-];
+const allCaseStudies = await getCollection('case-studies');
+const caseStudies = allCaseStudies.length > 0
+  ? allCaseStudies
+      .sort((a, b) => a.data.order - b.data.order)
+      .map(study => study.data)
+  : [];
 
 // Map case studies to display format
-const displayCaseStudies = caseStudies.map((study, index) => ({
+const displayCaseStudies = caseStudies.map((study) => ({
   ...study,
   subtitle: study.client,
   href: `/case-studies/${study.slug}`,
-  color: colors[index % colors.length],
-  services: study.tags ? study.tags.split(',').map((t: string) => t.trim()) : []
+  services: study.tags || []
 }));
 ---
 
@@ -34,50 +28,46 @@ const displayCaseStudies = caseStudies.map((study, index) => ({
   <Header />
   
   <main>
-    <section class="pt-32 pb-16 bg-slate-50">
+    <section class="pt-44 pb-24 bg-color-bg">
       <div class="container-custom">
-        <div class="max-w-3xl">
-          <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">
+        <div class="max-w-3xl animate-fade-in-up">
+          <h1 class="hero-title mb-8">
             Case Studies
           </h1>
-          <p class="text-xl text-slate-600">
+          <p class="hero-subtitle">
             Explore our success stories and see how we've helped businesses transform their operations with custom software solutions.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="section-padding bg-white">
+    <section class="section-padding bg-color-bg-alt">
       <div class="container-custom">
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {displayCaseStudies.map((study) => (
-            <a href={study.href} class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
-              <div class={`h-48 bg-gradient-to-br ${study.color} flex items-center justify-center relative overflow-hidden`}>
-                <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
-                <svg class="w-24 h-24 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {displayCaseStudies.map((study, index) => (
+            <a href={study.href} class={`case-study-card group animate-stagger animate-delay-${(index + 1) * 100}`}>
+              <div class="h-64 bg-color-bg flex items-center justify-center border-b border-color-border/50 overflow-hidden">
+                <div class="transform group-hover:scale-110 transition-transform duration-1000">
+                  <svg class="w-20 h-20 text-color-text-light2 opacity-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
               </div>
-              <div class="p-8">
-                <h3 class="text-xl font-semibold text-primary mb-1 group-hover:text-accent transition-colors">
+              <div class="p-10">
+                <div class="text-[11px] font-bold uppercase tracking-[0.2em] text-color-accent mb-4">{study.subtitle}</div>
+                <h3 class="text-2xl font-semibold text-color-primary mb-5 group-hover:text-color-accent transition-colors tracking-tight leading-tight">
                   {study.title}
                 </h3>
-                <p class="text-accent text-sm font-medium mb-4">{study.subtitle}</p>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                <p class="text-color-text-light text-[15px] leading-relaxed mb-8 line-clamp-3">
                   {study.description}
                 </p>
                 {study.services.length > 0 && (
-                  <div class="space-y-3">
-                    <div>
-                      <span class="text-xs font-semibold text-slate-700 uppercase tracking-wider">Services</span>
-                      <div class="flex flex-wrap gap-2 mt-2">
-                        {study.services.map((service: string) => (
-                          <span class="px-2 py-1 bg-slate-100 rounded text-xs text-slate-700">
-                            {service}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
+                  <div class="flex flex-wrap gap-2">
+                    {study.services.map((service: string) => (
+                      <span class="px-3 py-1 bg-color-bg rounded-full text-[10px] font-bold uppercase tracking-widest text-color-text-light border border-color-border/50">
+                        {service}
+                      </span>
+                    ))}
                   </div>
                 )}
               </div>
@@ -87,20 +77,20 @@ const displayCaseStudies = caseStudies.map((study, index) => ({
       </div>
     </section>
 
-    <section class="section-padding bg-slate-50">
+    <section class="cta-section section-padding">
       <div class="container-custom">
         <div class="text-center max-w-3xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">
+          <h2 class="text-5xl md:text-6xl font-semibold text-white mb-10 tracking-tight">
             Have a Project in Mind?
           </h2>
-          <p class="text-xl text-slate-600 mb-8">
+          <p class="text-xl text-white/60 mb-14 leading-relaxed">
             Let's discuss how we can help bring your vision to life with our expert software development services.
           </p>
-          <div class="flex flex-wrap justify-center gap-4">
-            <a href="/contact-us" class="btn-primary">
+          <div class="flex flex-wrap justify-center gap-6">
+            <a href="/contact-us" class="bg-white text-black px-12 py-5 rounded-full font-semibold hover:scale-105 transition-all duration-500">
               Get in Touch
             </a>
-            <a href="/services" class="btn-secondary">
+            <a href="/services" class="border border-white/20 text-white px-12 py-5 rounded-full font-semibold hover:bg-white/10 hover:scale-105 transition-all duration-500">
               Our Services
             </a>
           </div>

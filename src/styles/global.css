@@ -1,84 +1,208 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0f172a;
-  --color-primary-light: #1e293b;
-  --color-accent: #2563eb;
-  --color-accent-hover: #1d4ed8;
-  --color-color-text: #1f2937;
-  --color-color-text-light: #64748b;
+  /* Minimalist color palette - black, white, grays only */
+  --color-color-primary: #000000;
+  --color-color-primary-light: #1d1d1f;
+  --color-color-accent: #0066cc;
+  --color-color-accent-hover: #0071e3;
+  --color-color-text: #1d1d1f;
+  --color-color-text-light: #86868b;
+  --color-color-text-light2: #a1a1a6;
   --color-color-bg: #ffffff;
-  --color-color-bg-alt: #f8fafc;
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-display: 'Inter', system-ui, -apple-system, sans-serif;
+  --color-color-bg-alt: #f5f5f7;
+  --color-color-border: #e5e5e7;
+  --font-sans: 'SF Pro Display', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'SF Pro Display', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
   html {
-    scroll-behavior: smooth;
+    @apply scroll-smooth;
+    -webkit-tap-highlight-color: transparent;
   }
   
   body {
-    font-family: var(--font-sans);
+    @apply font-sans antialiased;
     color: var(--color-color-text);
     background-color: var(--color-color-bg);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.47059;
+    letter-spacing: -0.011em;
+  }
+
+  .dark body {
+    --color-color-primary: #f5f5f7;
+    --color-color-primary-light: #f5f5f7;
+    --color-color-accent: #2997ff;
+    --color-color-accent-hover: #51a9ff;
+    --color-color-text: #f5f5f7;
+    --color-color-text-light: #86868b;
+    --color-color-text-light2: #424245;
+    --color-color-bg: #000000;
+    --color-color-bg-alt: #161617;
+    --color-color-border: #262629;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display);
-    font-weight: 600;
-    letter-spacing: -0.025em;
-    color: var(--color-primary);
+    @apply font-display font-semibold tracking-tight leading-tight;
+    color: var(--color-color-primary);
+  }
+
+  a {
+    @apply no-underline;
+    color: inherit;
   }
 }
 
 @layer components {
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-6 md:px-8 lg:px-12;
   }
   
+  /* Premium buttons - Apple-like tactile feel */
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 font-medium rounded-lg transition-all duration-300;
-    background-color: var(--color-primary);
-    color: white;
+    @apply inline-flex items-center justify-center px-6 py-3 text-[13px] font-semibold rounded-full transition-all duration-200 ease-out hover:opacity-90 hover:scale-[1.02] active:scale-[0.98];
+    background-color: var(--color-color-primary);
+    color: var(--color-color-bg);
+  }
+ 
+  .dark .btn-primary {
+    @apply bg-white text-black;
   }
   
-  .btn-primary:hover {
-    background-color: var(--color-primary-light);
-    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.3);
-  }
-  
+  /* Secondary button */
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 border-2 font-medium rounded-lg transition-all duration-300;
-    border-color: var(--color-primary);
-    color: var(--color-primary);
+    @apply inline-flex items-center justify-center px-6 py-3 text-[13px] font-semibold rounded-full transition-all duration-200 ease-out hover:underline hover:scale-[1.02] active:scale-[0.98];
+    color: var(--color-color-accent);
+    background: transparent;
   }
-  
-  .btn-secondary:hover {
-    background-color: var(--color-primary);
-    color: white;
-  }
-  
+
+  /* Clean section spacing */
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-24 md:py-32;
   }
   
   .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-4;
-    color: var(--color-primary);
+    @apply text-4xl md:text-5xl mb-6;
   }
   
   .section-subtitle {
-    @apply text-lg md:text-xl max-w-2xl;
+    @apply text-lg md:text-xl max-w-2xl leading-relaxed;
     color: var(--color-color-text-light);
+  }
+
+  /* Minimalist link */
+  .link-underline {
+    @apply text-color-accent hover:underline transition-all duration-200;
+  }
+
+  /* Tech stack logo grid */
+  .tech-logo {
+    @apply w-16 h-16 flex items-center justify-center rounded-2xl transition-all duration-300 ease-out hover:scale-105 hover:bg-color-bg hover:shadow-sm;
+    background-color: var(--color-color-bg-alt);
+  }
+
+  .tech-logo img {
+    @apply w-8 h-8 object-contain transition-all duration-300 grayscale opacity-40;
+  }
+
+  .tech-logo:hover img {
+    @apply grayscale-0 opacity-100;
+  }
+
+  .dark .tech-logo img {
+    @apply brightness-200 opacity-30;
+  }
+
+  .dark .tech-logo:hover img {
+    @apply grayscale-0 brightness-100 opacity-100;
+  }
+
+  /* Hero section enhancements */
+  .hero-title {
+    @apply text-5xl md:text-6xl lg:text-7xl;
+  }
+
+  .hero-subtitle {
+    @apply text-xl md:text-2xl leading-relaxed;
+    color: var(--color-color-text-light);
+  }
+
+  /* Feature cards */
+  .feature-card {
+    @apply p-8 rounded-3xl transition-all duration-300 ease-out hover:bg-color-bg hover:shadow-xl hover:-translate-y-0.5;
+    background: var(--color-color-bg-alt);
+  }
+
+  /* Service cards */
+  .service-card {
+    @apply p-8 rounded-3xl transition-all duration-300 ease-out hover:bg-color-bg hover:shadow-xl hover:-translate-y-0.5;
+    background: var(--color-color-bg-alt);
+  }
+
+  /* Case study cards */
+  .case-study-card {
+    @apply rounded-3xl overflow-hidden transition-all duration-300 ease-out hover:bg-color-bg hover:shadow-xl hover:-translate-y-0.5;
+    background: var(--color-color-bg-alt);
+  }
+
+  /* CTA section */
+  .cta-section {
+    @apply rounded-[2.5rem] mx-4 md:mx-8 mb-8 overflow-hidden transition-all duration-500 bg-black;
+  }
+
+  .dark .cta-section {
+    @apply bg-[#1c1c1e] border border-color-border;
+  }
+
+  /* Subtle fade-in animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    opacity: 0;
+  }
+
+  .animate-delay-100 { animation-delay: 0.1s; }
+  .animate-delay-200 { animation-delay: 0.2s; }
+  .animate-delay-300 { animation-delay: 0.3s; }
+
+  /* Staggered animation */
+  .animate-stagger {
+    animation: fadeInUp 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    opacity: 0;
+  }
+
+  /* Stats cards */
+  .stat-card {
+    @apply p-8 rounded-3xl transition-all duration-300 ease-out hover:bg-color-bg hover:shadow-xl hover:-translate-y-0.5;
+    background: var(--color-color-bg-alt);
+  }
+
+  /* Client logos */
+  .client-logo {
+    @apply text-xl font-medium tracking-tight transition-all duration-300 opacity-60 hover:opacity-100;
+    color: var(--color-color-text-light2);
+  }
+
+  .client-logo:hover {
+    color: var(--color-color-text);
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(to right, var(--color-primary), var(--color-accent));
+    color: var(--color-color-primary);
   }
 }
