@@ -105,19 +105,7 @@
   }
 
   .tech-logo img {
-    @apply w-8 h-8 object-contain transition-all duration-300 grayscale opacity-40;
-  }
-
-  .tech-logo:hover img {
-    @apply grayscale-0 opacity-100;
-  }
-
-  .dark .tech-logo img {
-    @apply brightness-200 opacity-30;
-  }
-
-  .dark .tech-logo:hover img {
-    @apply grayscale-0 brightness-100 opacity-100;
+    @apply w-8 h-8 object-contain;
   }
 
   /* Hero section enhancements */
@@ -185,9 +173,9 @@
     opacity: 0;
   }
 
-  /* Stats cards */
+  /* Stats cards - No hover effects */
   .stat-card {
-    @apply p-8 rounded-3xl transition-all duration-300 ease-out hover:bg-color-bg hover:shadow-xl hover:-translate-y-0.5;
+    @apply p-8 rounded-3xl;
     background: var(--color-color-bg-alt);
   }
 
@@ -199,6 +187,48 @@
 
   .client-logo:hover {
     color: var(--color-color-text);
+  }
+
+  /* Client logos autoscroll */
+  .client-scroller {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .client-track {
+    display: flex;
+    gap: 3rem;
+    animation: scroll 30s linear infinite;
+    width: fit-content;
+  }
+
+  .client-logo-item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.5rem;
+  }
+
+  .client-logo-item img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+  }
+
+  .client-logo-item:hover img {
+    opacity: 1;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-33.33%);
+    }
   }
 }
 
