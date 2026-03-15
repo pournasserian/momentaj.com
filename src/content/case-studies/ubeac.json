@@ -14,7 +14,7 @@
     "teamSize": "8 Members",
     "technologies": ["Angular", ".NET Core", "Azure IoT Hub", "CosmosDB"]
   },
-  "hero_image": "/images/ubeac-screenshot.png",
+  "hero_image": "/images/ubeac-screenshot.webp",
   "tags": ["IoT", "Smart Building", "Automation", "Cloud", "Azure", "Real-time"],
   "featured": true,
   "order": 4,

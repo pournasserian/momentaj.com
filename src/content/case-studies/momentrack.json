@@ -14,7 +14,7 @@
     "teamSize": "5 Members",
     "technologies": ["React", "Node.js", "Socket.io", "MongoDB"]
   },
-  "hero_image": "/images/momentrack-screenshot.png",
+  "hero_image": "/images/momentrack-screenshot.webp",
   "tags": ["GPS", "Tracking", "Logistics", "Real-time", "Fleet Management"],
   "featured": true,
   "disabled": false,

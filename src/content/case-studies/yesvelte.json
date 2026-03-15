@@ -14,7 +14,7 @@
     "teamSize": "Core Team",
     "technologies": ["Svelte", "Bootstrap", "TypeScript"]
   },
-  "hero_image": "/images/yesvelte-screenshot.png",
+  "hero_image": "/images/yesvelte-screenshot.webp",
   "tags": ["Open Source", "UI Library", "Svelte", "Bootstrap", "Components"],
   "featured": true,
   "disabled": false,

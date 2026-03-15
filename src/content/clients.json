@@ -3,19 +3,19 @@
     {
       "name": "FluentCMS",
       "logo": "/images/fluentcms.svg",
-      "logoDark": "/images/fluentcms-dark.png",
+      "logoDark": "/images/fluentcms-dark.webp",
       "order": 1
     },
     {
       "name": "Canada",
-      "logo": "/images/canada.png",
-      "logoDark": "/images/canada.png",
+      "logo": "/images/canada.webp",
+      "logoDark": "/images/canada.webp",
       "order": 2
     },
     {
       "name": "Valco",
-      "logo": "/images/valco.png",
-      "logoDark": "/images/valco.png",
+      "logo": "/images/valco.webp",
+      "logoDark": "/images/valco.webp",
       "order": 3
     },
     {
@@ -26,14 +26,14 @@
     },
     {
       "name": "Ubeac",
-      "logo": "/images/ubeac.png",
-      "logoDark": "/images/ubeac.png",
+      "logo": "/images/ubeac.webp",
+      "logoDark": "/images/ubeac.webp",
       "order": 5
     },
     {
       "name": "Kanvas",
-      "logo": "/images/kanvas.png",
-      "logoDark": "/images/kanvas-dark.png",
+      "logo": "/images/kanvas.webp",
+      "logoDark": "/images/kanvas-dark.webp",
       "order": 6
     },
     {
@@ -50,8 +50,8 @@
     },
     {
       "name": "TripSupport",
-      "logo": "/images/tripsupport.png",
-      "logoDark": "/images/tripsupport.png",
+      "logo": "/images/tripsupport.webp",
+      "logoDark": "/images/tripsupport.webp",
       "order": 9
     }
   ]

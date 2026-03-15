@@ -14,7 +14,7 @@
     "teamSize": "3 Members",
     "technologies": ["React", "Node.js", "MongoDB", "Stripe"]
   },
-  "hero_image": "/images/marvic-screenshot.png",
+  "hero_image": "/images/marvic-screenshot.webp",
   "tags": ["Web Development", "Travel", "E-commerce", "Holiday Packages", "Booking"],
   "featured": false,
   "order": 8,

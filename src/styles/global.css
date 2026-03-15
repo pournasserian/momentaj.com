@@ -112,11 +112,11 @@
 
   /* Hero section enhancements */
   .hero-title {
-    @apply text-5xl md:text-6xl lg:text-7xl;
+    @apply text-3xl md:text-5xl lg:text-6xl xl:text-7xl;
   }
 
   .hero-subtitle {
-    @apply text-xl md:text-2xl leading-relaxed;
+    @apply text-base md:text-xl lg:text-2xl leading-relaxed;
     color: var(--color-color-text-light);
   }
 

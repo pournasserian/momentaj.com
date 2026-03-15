@@ -14,7 +14,7 @@
     "teamSize": "5 Members",
     "technologies": ["Next.js", "Python", "Redis", "Amadeus API"]
   },
-  "hero_image": "/images/tripsupport-flight-screenshot.png",
+  "hero_image": "/images/tripsupport-flight-screenshot.webp",
   "tags": ["API Integration", "Travel", "Performance Optimization", "Flight Booking", "GDS"],
   "featured": true,
   "disabled": false,

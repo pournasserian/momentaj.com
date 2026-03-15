@@ -52,13 +52,13 @@ const plainContentHtml = !isStructuredContent ? await renderMarkdown(caseStudy.c
 
 // Map available screenshots to case studies
 const screenshotMap: Record<string, string> = {
-  'fluentcms': '/images/fluentcms-screenshot.png',
-  'momentrack': '/images/momentrack-screenshot.png',
-  'trip-support': '/images/tripsupport-screenshot.png',
-  'trip-support-flights': '/images/tripsupport-screenshot.png',
-  'trip-support-hotels': '/images/tripsupport-screenshot.png',
-  'ubeac': '/images/ubeac-screenshot.png',
-  'yesvelte': '/images/yesvelte-screenshot.png'
+  'fluentcms': '/images/fluentcms-screenshot.webp',
+  'momentrack': '/images/momentrack-screenshot.webp',
+  'trip-support': '/images/tripsupport-screenshot.webp',
+  'trip-support-flights': '/images/tripsupport-screenshot.webp',
+  'trip-support-hotels': '/images/tripsupport-screenshot.webp',
+  'ubeac': '/images/ubeac-screenshot.webp',
+  'yesvelte': '/images/yesvelte-screenshot.webp'
 };
 
 // Get screenshot for current case study
@@ -80,36 +80,36 @@ const relatedCaseStudiesWithScreenshots = relatedCaseStudies.map(study => ({
   
   <main>
     <!-- Breadcrumbs -->
-    <nav class="pt-32 bg-color-bg">
-      <div class="container-custom py-4">
-        <ol class="flex items-center gap-3 text-[11px] font-bold uppercase tracking-widest">
+    <nav class="pt-24 md:pt-32 bg-color-bg">
+      <div class="container-custom py-3 md:py-4">
+        <ol class="flex flex-wrap items-center gap-2 md:gap-3 text-[10px] md:text-[11px] font-bold uppercase tracking-widest">
           <li><a href="/" class="text-color-text-light2 hover:text-color-primary transition-colors">Home</a></li>
           <li><span class="text-color-border">/</span></li>
           <li><a href="/case-studies" class="text-color-text-light2 hover:text-color-primary transition-colors">Case Studies</a></li>
           <li><span class="text-color-border">/</span></li>
-          <li class="text-color-accent">{caseStudy.title}</li>
+          <li class="text-color-accent truncate max-w-[150px] md:max-w-none">{caseStudy.title}</li>
         </ol>
       </div>
     </nav>
 
     <!-- Hero -->
-    <section class="pt-12 pb-16 bg-color-bg">
+    <section class="pt-8 md:pt-12 pb-12 md:pb-16 bg-color-bg">
       <div class="container-custom">
         <div class="max-w-4xl animate-fade-in-up">
-          <p class="text-[11px] font-bold text-color-accent mb-6 tracking-[0.2em] uppercase">{caseStudy.client}</p>
-          <h1 class="hero-title mb-10">{caseStudy.title}</h1>
-          <p class="hero-subtitle max-w-2xl mb-12">{caseStudy.description}</p>
+          <p class="text-[10px] md:text-[11px] font-bold text-color-accent mb-4 md:mb-6 tracking-[0.2em] uppercase">{caseStudy.client}</p>
+          <h1 class="hero-title mb-6 md:mb-10 leading-tight">{caseStudy.title}</h1>
+          <p class="hero-subtitle max-w-2xl mb-8 md:mb-12 text-base md:text-lg">{caseStudy.description}</p>
           
-          <div class="flex flex-wrap gap-6">
+          <div class="flex flex-wrap gap-4 md:gap-6">
             {caseStudy.url && (
-              <a href={caseStudy.url} target="_blank" rel="noopener noreferrer" class="btn-primary">
+              <a href={caseStudy.url} target="_blank" rel="noopener noreferrer" class="btn-primary text-sm md:text-base">
                 Visit Website
                 <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 00-2 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>
             )}
-            <a href="/contact-us" class="btn-secondary">
+            <a href="/contact-us" class="btn-secondary text-sm md:text-base">
               Start a Project
             </a>
           </div>
@@ -119,10 +119,10 @@ const relatedCaseStudiesWithScreenshots = relatedCaseStudies.map(study => ({
 
     <!-- Hero Image -->
     {currentScreenshot && (
-      <section class="pb-16 bg-color-bg">
+      <section class="pb-10 md:pb-16 bg-color-bg">
         <div class="container-custom">
           <div class="max-w-5xl mx-auto animate-fade-in-up animate-delay-100">
-            <div class="rounded-2xl overflow-hidden border border-color-border/30 shadow-2xl">
+            <div class="rounded-xl md:rounded-2xl overflow-hidden border border-color-border/30 shadow-xl md:shadow-2xl">
               <img 
                 src={currentScreenshot} 
                 alt={`${caseStudy.title} screenshot`}
@@ -137,31 +137,31 @@ const relatedCaseStudiesWithScreenshots = relatedCaseStudies.map(study => ({
     <!-- Content -->
     <section class="section-padding bg-color-bg-alt border-t border-color-border/30">
       <div class="container-custom">
-        <div class="grid lg:grid-cols-12 gap-20">
-          <div class="lg:col-span-8 animate-fade-in-up animate-delay-200">
+        <div class="grid lg:grid-cols-12 gap-8 md:gap-16 lg:gap-20">
+          <div class="lg:col-span-8 animate-fade-in-up animate-delay-200 order-2 lg:order-1">
             {structuredContentHtml ? (
               <div class="prose-custom">
                 {structuredContentHtml.overview && (
                   <div>
-                    <h2 class="text-3xl font-semibold text-color-primary mb-8 tracking-tight">Overview</h2>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-color-primary mb-6 md:mb-8 tracking-tight">Overview</h2>
                     <div set:html={structuredContentHtml.overview} />
                   </div>
                 )}
                 {structuredContentHtml.challenge && (
-                  <div>
-                    <h3 class="text-2xl font-semibold text-color-primary mb-4 tracking-tight">The Challenge</h3>
+                  <div class="mt-8 md:mt-12">
+                    <h3 class="text-xl md:text-2xl font-semibold text-color-primary mb-4 tracking-tight">The Challenge</h3>
                     <div set:html={structuredContentHtml.challenge} />
                   </div>
                 )}
                 {structuredContentHtml.solution && (
-                  <div>
-                    <h3 class="text-2xl font-semibold text-color-primary mb-4 tracking-tight">Our Solution</h3>
+                  <div class="mt-8 md:mt-12">
+                    <h3 class="text-xl md:text-2xl font-semibold text-color-primary mb-4 tracking-tight">Our Solution</h3>
                     <div set:html={structuredContentHtml.solution} />
                   </div>
                 )}
                 {structuredContentHtml.results && (
-                  <div>
-                    <h3 class="text-2xl font-semibold text-color-primary mb-4 tracking-tight">Results</h3>
+                  <div class="mt-8 md:mt-12">
+                    <h3 class="text-xl md:text-2xl font-semibold text-color-primary mb-4 tracking-tight">Results</h3>
                     <div set:html={structuredContentHtml.results} />
                   </div>
                 )}
@@ -171,29 +171,29 @@ const relatedCaseStudiesWithScreenshots = relatedCaseStudies.map(study => ({
             )}
           </div>
           
-          <div class="lg:col-span-4 space-y-12 animate-fade-in-up animate-delay-300">
+          <div class="lg:col-span-4 space-y-8 md:space-y-12 animate-fade-in-up animate-delay-300 order-1 lg:order-2">
             {caseStudy.stats && (
-              <div class="space-y-10">
+              <div class="space-y-6 md:space-y-10">
                 <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-color-primary">Project Details</h3>
-                <div class="space-y-10">
+                <div class="space-y-6 md:space-y-10">
                   {caseStudy.stats.duration && (
                     <div>
                       <p class="text-[10px] font-bold uppercase tracking-widest text-color-text-light2 mb-2">Duration</p>
-                      <p class="text-color-primary font-medium text-xl tracking-tight">{caseStudy.stats.duration}</p>
+                      <p class="text-color-primary font-medium text-lg md:text-xl tracking-tight">{caseStudy.stats.duration}</p>
                     </div>
                   )}
                   {caseStudy.stats.teamSize && (
                     <div>
                       <p class="text-[10px] font-bold uppercase tracking-widest text-color-text-light2 mb-2">Team Size</p>
-                      <p class="text-color-primary font-medium text-xl tracking-tight">{caseStudy.stats.teamSize}</p>
+                      <p class="text-color-primary font-medium text-lg md:text-xl tracking-tight">{caseStudy.stats.teamSize}</p>
                     </div>
                   )}
                   {caseStudy.stats.technologies && (
                     <div>
-                      <p class="text-[10px] font-bold uppercase tracking-widest text-color-text-light2 mb-4">Technologies</p>
+                      <p class="text-[10px] font-bold uppercase tracking-widest text-color-text-light2 mb-3 md:mb-4">Technologies</p>
                       <div class="flex flex-wrap gap-2">
                         {caseStudy.stats.technologies.map((tech) => (
-                          <span class="px-3 py-1 bg-color-bg border border-color-border/50 rounded-full text-[10px] font-bold uppercase tracking-wider text-color-text-light">{tech}</span>
+                          <span class="px-2.5 md:px-3 py-1 bg-color-bg border border-color-border/50 rounded-full text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-color-text-light whitespace-nowrap">{tech}</span>
                         ))}
                       </div>
                     </div>
@@ -202,18 +202,18 @@ const relatedCaseStudiesWithScreenshots = relatedCaseStudies.map(study => ({
               </div>
             )}
 
-            <div class="pt-10 border-t border-color-border/30">
-              <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-color-primary mb-4">Client</h3>
-              <p class="text-color-text-light font-medium text-lg">{caseStudy.client}</p>
+            <div class="pt-6 md:pt-10 border-t border-color-border/30">
+              <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-color-primary mb-3 md:mb-4">Client</h3>
+              <p class="text-color-text-light font-medium text-base md:text-lg">{caseStudy.client}</p>
             </div>
             
             {caseStudy.tags && (
-              <div class="pt-10 border-t border-color-border/30">
-                <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-color-primary mb-6">Services</h3>
-                <ul class="space-y-4">
+              <div class="pt-6 md:pt-10 border-t border-color-border/30">
+                <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-color-primary mb-4 md:mb-6">Services</h3>
+                <ul class="space-y-3 md:space-y-4">
                   {caseStudy.tags.map((tag: string) => (
-                    <li class="flex items-center gap-3 text-color-text-light font-medium">
-                      <span class="w-1.5 h-1.5 rounded-full bg-color-accent"></span>
+                    <li class="flex items-center gap-3 text-color-text-light font-medium text-sm md:text-base">
+                      <span class="w-1.5 h-1.5 rounded-full bg-color-accent flex-shrink-0"></span>
                       {tag}
                     </li>
                   ))}
@@ -229,13 +229,13 @@ const relatedCaseStudiesWithScreenshots = relatedCaseStudies.map(study => ({
     {relatedCaseStudies.length > 0 && (
       <section class="section-padding bg-color-bg border-t border-color-border/30">
         <div class="container-custom">
-          <div class="text-center mb-20">
-            <h2 class="section-title !text-3xl md:!text-4xl">Related Case Studies</h2>
+          <div class="text-center mb-10 md:mb-16 lg:mb-20">
+            <h2 class="section-title text-2xl md:text-3xl lg:text-4xl">Related Case Studies</h2>
           </div>
-          <div class="grid md:grid-cols-3 gap-10">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
             {relatedCaseStudiesWithScreenshots.map((study, index) => (
               <a href={`/case-studies/${study.slug}`} class={`case-study-card bg-color-bg/50 border border-color-text/10 group animate-stagger animate-delay-${(index + 1) * 100}`}>
-                <div class="h-56 bg-color-bg-alt flex items-center justify-center border-b border-color-border/50 overflow-hidden">
+                <div class="h-44 md:h-48 lg:h-56 bg-color-bg-alt flex items-center justify-center border-b border-color-border/50 overflow-hidden">
                   {study.screenshot ? (
                     <img 
                       src={study.screenshot} 
@@ -244,15 +244,15 @@ const relatedCaseStudiesWithScreenshots = relatedCaseStudies.map(study => ({
                     />
                   ) : (
                     <div class="transform group-hover:scale-110 transition-transform duration-1000">
-                      <svg class="w-16 h-16 text-color-text-light2 opacity-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg class="w-12 md:w-16 h-12 md:h-16 text-color-text-light2 opacity-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                     </div>
                   )}
                 </div>
-                <div class="p-10">
-                  <div class="text-[10px] font-bold uppercase tracking-widest text-color-accent mb-3">{study.client}</div>
-                  <h3 class="text-xl font-semibold group-hover:text-color-accent transition-colors leading-tight tracking-tight">{study.title}</h3>
+                <div class="p-6 md:p-8 lg:p-10">
+                  <div class="text-[10px] font-bold uppercase tracking-widest text-color-accent mb-2 md:mb-3">{study.client}</div>
+                  <h3 class="text-lg md:text-xl font-semibold group-hover:text-color-accent transition-colors leading-tight tracking-tight">{study.title}</h3>
                 </div>
               </a>
             ))}
@@ -264,10 +264,10 @@ const relatedCaseStudiesWithScreenshots = relatedCaseStudies.map(study => ({
     <!-- CTA -->
     <section class="cta-section section-padding">
       <div class="container-custom">
-        <div class="text-center max-w-3xl mx-auto">
-          <h2 class="text-5xl md:text-6xl font-semibold text-white mb-10 tracking-tight">Have a Similar Project?</h2>
-          <p class="text-xl text-white/60 mb-14 leading-relaxed">Let's discuss how we can help you achieve your goals with high-performance software.</p>
-          <a href="/contact-us" class="bg-white text-black px-12 py-5 rounded-full font-semibold hover:scale-105 transition-all duration-500 inline-block">
+        <div class="text-center max-w-2xl md:max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-6 md:mb-10 tracking-tight">Have a Similar Project?</h2>
+          <p class="text-base md:text-xl text-white/60 mb-10 md:mb-14 leading-relaxed">Let's discuss how we can help you achieve your goals with high-performance software.</p>
+          <a href="/contact-us" class="bg-white text-black px-8 md:px-12 py-4 md:py-5 rounded-full font-semibold hover:scale-105 transition-all duration-500 inline-block text-sm md:text-base">
             Get Started
           </a>
         </div>
