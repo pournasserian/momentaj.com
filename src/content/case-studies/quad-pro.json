@@ -1,13 +1,13 @@
 {
-  "title": "Quad Pro",
+  "title": "Quad Pro - Quad Bike Rental Management",
   "slug": "quad-pro",
   "client": "Quad Pro",
-  "description": "A specialized management system for quad bike rentals and tours.",
+  "description": "A specialized management system for quad bike rentals and tours. Learn how we built a custom solution streamlining fleet management and customer waivers.",
   "content": {
-    "overview": "Quad Pro offers adventure tours and quad bike rentals. They needed a dedicated system to manage their fleet, bookings, and customer waivers.",
-    "challenge": "The manual tracking of bike maintenance and paper-based waiver systems were prone to errors and difficult to manage during peak seasons.",
-    "solution": "We developed a custom management portal that tracks bike availability, schedules maintenance, and digitizes the customer waiver process with electronic signatures.",
-    "results": "Quad Pro improved their operational efficiency by 40%, reduced paperwork, and ensured better safety compliance through automated maintenance alerts."
+    "overview": "Quad Pro offers adventure tours and quad bike rentals in scenic locations. They required a dedicated management system to handle their fleet of vehicles, bookings, and customer documentation efficiently.",
+    "challenge": "Manual tracking of bike maintenance and paper-based waiver systems created operational challenges. During peak seasons, managing bookings, ensuring proper maintenance schedules, and processing customer waivers became increasingly difficult and error-prone.",
+    "solution": "We developed a custom management portal that streamlines all aspects of their operations. The system tracks bike availability in real-time, schedules preventive maintenance, and digitizes the customer waiver process with electronic signatures for compliance.",
+    "results": "Quad Pro improved operational efficiency by 40% through automated workflows. Paperwork was eliminated, reducing administrative overhead. Automated maintenance alerts ensure fleet safety and compliance, providing peace of mind during busy tourist seasons."
   },
   "stats": {
     "duration": "3 Months",
@@ -15,7 +15,11 @@
     "technologies": ["Vue.js", "Firebase", "Tailwind CSS"]
   },
   "hero_image": "/images/case-studies/quad-pro.jpg",
-  "tags": "Custom Software, Management System, Adventure Sports",
+  "tags": ["Custom Software", "Management System", "Adventure Sports", "Rental Management"],
   "featured": false,
-  "order": 8
+  "order": 10,
+  "disabled": true,
+  "seo_title": "Quad Pro Case Study | Momentaj - Quad Bike Rental Management System",
+  "seo_description": "Discover how Momentaj built Quad Pro's quad bike rental management system. Learn how we created a solution that improved operational efficiency by 40%.",
+  "seo_keywords": "rental management, fleet management, adventure sports software, booking system, quad bike rental, tour management"
 }

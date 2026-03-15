@@ -1,12 +1,26 @@
 {
-  "title": "MayAI - AI Powered Home Assistant",
+  "title": "MayAI - AI-Powered Home Assistant",
   "slug": "mayai",
   "client": "Internal Project",
-  "description": "MayAI is a sophisticated AI-powered home assistant designed to provide seamless control and intelligent automation for modern homes. Hosted at mayai.momentaj.com.",
-  "content": "MayAI is a sophisticated AI-powered home assistant designed to provide seamless control and intelligent automation for modern homes. Hosted at mayai.momentaj.com.",
-  "hero_image": "/images/case-studies/mayai.jpg",
-  "tags": "AI, IoT, Home Automation, LLM",
+  "description": "MayAI is a sophisticated AI-powered home assistant designed to provide seamless control and intelligent automation for modern homes. Learn how we built an intelligent home automation system at mayai.momentaj.com.",
+  "content": {
+    "overview": "MayAI is an internal project showcasing our expertise in AI and IoT integration. This sophisticated home assistant provides seamless control and intelligent automation for modern homes, combining large language models with smart home device integration.",
+    "challenge": "Creating a truly intelligent home assistant requires integrating diverse smart devices, processing natural language commands, and providing contextual responses. The challenge was building a system that understands user intent and orchestrates multiple devices harmoniously.",
+    "solution": "We developed MayAI using advanced LLM technology to process natural language commands and control various smart home devices. The system features voice interaction capabilities, automation routines, and learns from user preferences to provide personalized experiences.",
+    "results": "MayAI demonstrates our capabilities in AI-powered solutions, combining LLMs with IoT technologies. The project serves as a proof of concept for intelligent home automation and showcases our expertise in emerging technologies."
+  },
+  "stats": {
+    "duration": "3 Months",
+    "teamSize": "3 Members",
+    "technologies": ["Python", "LLM", "IoT", "Node.js", "React"]
+  },
+  "hero_image": "/images/mayai-screenshot.png",
+  "tags": ["AI", "IoT", "Home Automation", "LLM", "Voice Assistant", "Smart Home"],
   "featured": true,
-  "order": 3,
-  "url": "https://mayai.momentaj.com"
+  "disabled": false,
+  "order": 11,
+  "url": "https://mayai.momentaj.com",
+  "seo_title": "MayAI Case Study | Momentaj - AI-Powered Home Assistant",
+  "seo_description": "Discover how Momentaj built MayAI, an AI-powered home assistant combining LLMs with IoT technology. Learn about our intelligent home automation solutions.",
+  "seo_keywords": "AI assistant, home automation, smart home, LLM, IoT, voice assistant, AI home"
 }

@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@plugin "@tailwindcss/typography";
+
 @theme {
   /* Minimalist color palette - black text, blue actions */
   --color-color-primary: #000000;
@@ -100,12 +102,12 @@
 
   /* Tech stack logo grid */
   .tech-logo {
-    @apply w-16 h-16 flex items-center justify-center rounded-2xl transition-all duration-300 ease-out hover:scale-105 hover:bg-color-bg hover:shadow-sm;
+    @apply w-20 h-20 flex items-center justify-center rounded-2xl transition-all duration-300 ease-out hover:scale-105 hover:bg-color-bg hover:shadow-sm;
     background-color: var(--color-color-bg-alt);
   }
 
   .tech-logo img {
-    @apply w-8 h-8 object-contain;
+    @apply w-12 h-12 object-contain;
   }
 
   /* Hero section enhancements */
@@ -120,26 +122,58 @@
 
   /* Feature cards */
   .feature-card {
-    @apply p-8 rounded-3xl transition-all duration-300 ease-out hover:bg-color-bg hover:shadow-xl hover:-translate-y-0.5;
+    @apply p-8 rounded-3xl transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-0.5;
+    background: #ffffff;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  .dark .feature-card {
+    @apply hover:shadow-none;
     background: var(--color-color-bg-alt);
+    box-shadow: none;
   }
 
   /* Service cards */
   .service-card {
-    @apply p-8 rounded-3xl transition-all duration-300 ease-out hover:bg-color-bg hover:shadow-xl hover:-translate-y-0.5;
+    @apply p-8 rounded-3xl transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-0.5;
+    background: #ffffff;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  .dark .service-card {
+    @apply hover:shadow-none;
     background: var(--color-color-bg-alt);
+    box-shadow: none;
   }
 
   /* Case study cards */
   .case-study-card {
-    @apply rounded-3xl overflow-hidden transition-all duration-300 ease-out hover:bg-color-bg hover:shadow-xl hover:-translate-y-0.5;
+    @apply rounded-3xl overflow-hidden transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-0.5;
+    background: #ffffff;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  .dark .case-study-card {
+    @apply hover:shadow-none;
     background: var(--color-color-bg-alt);
+    box-shadow: none;
   }
 
   /* CTA section */
   .cta-section {
     @apply rounded-[2.5rem] mx-4 md:mx-8 mb-8 overflow-hidden transition-all duration-500;
     background-color: #000000;
+    background-image: 
+      radial-gradient(ellipse at 20% 50%, rgba(0, 102, 204, 0.25) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(0, 102, 204, 0.18) 0%, transparent 40%),
+      radial-gradient(ellipse at 60% 80%, rgba(0, 102, 204, 0.12) 0%, transparent 40%);
+  }
+
+  .dark .cta-section {
+    background-image: 
+      radial-gradient(ellipse at 20% 50%, rgba(0, 102, 204, 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(0, 102, 204, 0.06) 0%, transparent 40%),
+      radial-gradient(ellipse at 60% 80%, rgba(0, 102, 204, 0.04) 0%, transparent 40%);
   }
 
   .dark .cta-section {
@@ -176,7 +210,13 @@
   /* Stats cards - No hover effects */
   .stat-card {
     @apply p-8 rounded-3xl;
+    background: #ffffff;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  .dark .stat-card {
     background: var(--color-color-bg-alt);
+    box-shadow: none;
   }
 
   /* Client logos */
@@ -193,6 +233,11 @@
   .client-scroller {
     width: 100%;
     overflow: hidden;
+    cursor: grab;
+  }
+
+  .client-scroller:active {
+    cursor: grabbing;
   }
 
   .client-track {
@@ -235,5 +280,112 @@
 @layer utilities {
   .text-gradient {
     color: var(--color-color-primary);
+  }
+
+  /* Custom prose styles for case study content */
+  .prose-custom {
+    @apply space-y-10;
+  }
+
+  .prose-custom > div {
+    @apply mb-10;
+  }
+
+  .prose-custom p {
+    @apply text-lg leading-relaxed mb-6;
+    color: var(--color-color-text-light);
+  }
+
+  .prose-custom h2 {
+    @apply text-3xl font-semibold tracking-tight mt-12 mb-6;
+    color: var(--color-color-primary);
+  }
+
+  .prose-custom h3 {
+    @apply text-2xl font-semibold tracking-tight mt-10 mb-4;
+    color: var(--color-color-primary);
+  }
+
+  .prose-custom a {
+    @apply no-underline transition-colors duration-200;
+    color: var(--color-color-accent);
+  }
+
+  .prose-custom a:hover {
+    color: var(--color-color-accent-hover);
+    @apply underline;
+  }
+
+  .prose-custom ul {
+    @apply list-disc list-outside ml-6 space-y-2 mb-6;
+  }
+
+  .prose-custom ul > li {
+    @apply text-lg leading-relaxed pl-2;
+    color: var(--color-color-text-light);
+  }
+
+  .prose-custom ul > li::marker {
+    color: var(--color-color-accent);
+  }
+
+  .prose-custom ol {
+    @apply list-decimal list-outside ml-6 space-y-2 mb-6;
+  }
+
+  .prose-custom ol > li {
+    @apply text-lg leading-relaxed pl-2;
+    color: var(--color-color-text-light);
+  }
+
+  .prose-custom ol > li::marker {
+    color: var(--color-color-accent);
+    font-weight: 600;
+  }
+
+  .prose-custom blockquote {
+    @apply border-l-4 pl-6 py-2 my-8 italic;
+    border-color: var(--color-color-accent);
+    color: var(--color-color-text-light);
+    font-style: italic;
+  }
+
+  .prose-custom code {
+    @apply px-2 py-1 rounded text-sm font-medium;
+    background-color: var(--color-color-bg-alt);
+    color: var(--color-color-primary);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  .prose-custom pre {
+    @apply rounded-xl p-6 overflow-x-auto my-8;
+    background-color: var(--color-color-bg-alt);
+  }
+
+  .prose-custom pre code {
+    @apply p-0 bg-transparent text-base;
+    color: var(--color-color-text-light);
+  }
+
+  .prose-custom hr {
+    @apply my-10 border-color-border/50;
+    border-color: var(--color-color-border);
+  }
+
+  .prose-custom strong {
+    color: var(--color-color-primary);
+    font-weight: 600;
+  }
+
+  .prose-custom img {
+    @apply rounded-xl my-8 w-full;
+  }
+
+  .prose-custom > *:last-child {
+    @apply mb-0;
+  }
+
+  .prose-custom > *:last-child p {
+    @apply mb-0;
   }
 }

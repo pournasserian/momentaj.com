@@ -1,0 +1,58 @@
+{
+  "items": [
+    {
+      "name": "FluentCMS",
+      "logo": "/images/fluentcms.svg",
+      "logoDark": "/images/fluentcms-dark.png",
+      "order": 1
+    },
+    {
+      "name": "Canada",
+      "logo": "/images/canada.png",
+      "logoDark": "/images/canada.png",
+      "order": 2
+    },
+    {
+      "name": "Valco",
+      "logo": "/images/valco.png",
+      "logoDark": "/images/valco.png",
+      "order": 3
+    },
+    {
+      "name": "Waterloo",
+      "logo": "/images/waterloo-university.svg",
+      "logoDark": "/images/waterloo-university-dark.svg",
+      "order": 4
+    },
+    {
+      "name": "Ubeac",
+      "logo": "/images/ubeac.png",
+      "logoDark": "/images/ubeac.png",
+      "order": 5
+    },
+    {
+      "name": "Kanvas",
+      "logo": "/images/kanvas.png",
+      "logoDark": "/images/kanvas-dark.png",
+      "order": 6
+    },
+    {
+      "name": "TorontoMetropolitan University",
+      "logo": "/images/torontomu.svg",
+      "logoDark": "/images/torontomu.svg",
+      "order": 7
+    },
+    {
+      "name": "GeorgeBrown",
+      "logo": "/images/george-brown.svg",
+      "logoDark": "/images/george-brown.svg",
+      "order": 8
+    },
+    {
+      "name": "TripSupport",
+      "logo": "/images/tripsupport.png",
+      "logoDark": "/images/tripsupport.png",
+      "order": 9
+    }
+  ]
+}

@@ -1,21 +1,25 @@
 {
-  "title": "Trip Support",
+  "title": "Trip Support - Travel Assistance Platform",
   "slug": "trip-support",
   "client": "Trip Support",
-  "description": "Travel assistance platform for business and leisure travelers.",
+  "description": "Travel assistance platform for business and leisure travelers. Learn how we built a comprehensive travel management system serving thousands of users worldwide.",
   "content": {
-    "overview": "Trip Support offers comprehensive travel assistance services for travelers worldwide.",
-    "challenge": "They needed a platform to manage travel bookings, emergency assistance, and customer support.",
-    "solution": "We built a comprehensive web application with booking management, real-time chat support, and integrated payment processing.",
-    "results": "The platform handles 10,000+ monthly active users with 24/7 support availability and a seamless booking experience."
+    "overview": "Trip Support offers comprehensive travel assistance services for travelers worldwide. The platform provides booking management, emergency assistance, and customer support for both business and leisure travelers.",
+    "challenge": "Trip Support needed a unified platform to manage travel bookings, provide 24/7 emergency assistance, and deliver responsive customer support. The existing systems were fragmented and couldn't scale to meet growing demand.",
+    "solution": "We built a comprehensive web application featuring booking management, real-time chat support, integrated payment processing, and an intuitive user dashboard. The platform was designed for scalability and reliability.",
+    "results": "The platform now handles over 10,000 monthly active users with 24/7 support availability. Users enjoy a seamless booking experience, and the client has seen significant growth in customer satisfaction and retention."
   },
   "stats": {
     "duration": "8 Months",
     "teamSize": "6 Members",
     "technologies": ["React", "Next.js", "Node.js", "Stripe"]
   },
-  "hero_image": "/images/case-studies/trip-support.jpg",
-  "tags": "Travel, Booking, Support, React",
+  "hero_image": "/images/tripsupport-screenshot.png",
+  "tags": ["Travel", "Booking", "Support", "Web Application", "Fintech"],
   "featured": true,
-  "order": 3
+  "disabled": false,
+  "order": 3,
+  "seo_title": "Trip Support Case Study | Momentaj - Travel Assistance Platform Development",
+  "seo_description": "Learn how Momentaj built Trip Support, a comprehensive travel assistance platform. Discover how we created a scalable solution serving thousands of travelers.",
+  "seo_keywords": "travel platform, booking system, travel assistance, Trip Support, travel software, booking management"
 }

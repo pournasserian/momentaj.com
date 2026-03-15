@@ -41,9 +41,9 @@ if (settings?.data?.social_links?.github) {
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
       <!-- Company Info -->
       <div class="lg:col-span-1">
-        <a href="/" class="block mb-8 group">
+        <a href="/" class="block mb-8 group invert dark:invert-0">
           {settings?.data?.logo ? (
-            <img src={settings.data.logo} alt={settings.data.site_name} class="h-8 w-auto group-hover:opacity-70 transition-opacity" />
+            <img src={settings.data.logo} alt={settings.data.site_name} class="h-12 w-auto group-hover:opacity-70 transition-opacity" />
           ) : (
             <span class="text-2xl font-semibold text-color-primary tracking-tight group-hover:opacity-70 transition-opacity">
               {settings?.data?.site_name || 'Momentaj'}

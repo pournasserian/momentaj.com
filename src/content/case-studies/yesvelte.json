@@ -1,22 +1,26 @@
 {
-  "title": "YeSvelte",
+  "title": "YeSvelte - UI Component Library for Svelte",
   "slug": "yesvelte",
   "client": "Open Source",
-  "description": "A high-performance UI component library for Svelte based on Bootstrap.",
+  "description": "A high-performance UI component library for Svelte based on Bootstrap. Learn how we created an accessible, developer-friendly component library that simplifies Svelte UI development.",
   "content": {
-    "overview": "YeSvelte is an open-source UI library designed to provide Svelte developers with a comprehensive set of accessible and customizable components based on the Bootstrap framework.",
-    "challenge": "Svelte developers often lack a robust, well-documented component library that follows Bootstrap's proven design patterns while leveraging Svelte's reactivity and performance.",
-    "solution": "We built YeSvelte from the ground up, ensuring each component is highly performant, accessible, and easy to use. We also provided extensive documentation and examples to help developers get started quickly.",
-    "results": "YeSvelte has gained significant traction in the Svelte community, with thousands of downloads and contributions from developers worldwide, simplifying the UI development process for many projects."
+    "overview": "YeSvelte is an open-source UI component library that brings Bootstrap's proven design patterns to Svelte developers. It provides a comprehensive set of accessible, customizable components that leverage Svelte's reactivity and performance advantages.",
+    "challenge": "Svelte developers frequently lack access to robust, well-documented component libraries that combine the best practices of established frameworks with Svelte's unique reactivity model. Existing solutions often require significant customization or lack proper accessibility support.",
+    "solution": "We built YeSvelte from the ground up, carefully crafting each component for optimal performance and accessibility. The library includes extensive documentation, live examples, and TypeScript support to help developers integrate it quickly into their projects.",
+    "results": "YeSvelte has gained significant traction in the Svelte community with thousands of npm downloads. The library simplifies UI development for countless projects, enabling developers to create accessible, responsive interfaces faster while maintaining code quality."
   },
   "stats": {
     "duration": "Ongoing",
     "teamSize": "Core Team",
     "technologies": ["Svelte", "Bootstrap", "TypeScript"]
   },
-  "hero_image": "/images/case-studies/yesvelte.jpg",
-  "tags": "Open Source, UI Library, Svelte",
+  "hero_image": "/images/yesvelte-screenshot.png",
+  "tags": ["Open Source", "UI Library", "Svelte", "Bootstrap", "Components"],
   "featured": true,
+  "disabled": false,
   "order": 2,
-  "url": "https://yesvelte.com"
+  "url": "https://yesvelte.com",
+  "seo_title": "YeSvelte Case Study | Momentaj - Svelte Bootstrap Component Library",
+  "seo_description": "Discover how Momentaj developed YeSvelte, a high-performance UI component library for Svelte. Learn about the challenges, solutions, and impact on the Svelte community.",
+  "seo_keywords": "Svelte components, UI library, Bootstrap Svelte, yesvelte, open source UI, Svelte Bootstrap"
 }

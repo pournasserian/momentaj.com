@@ -1,21 +1,25 @@
 {
-  "title": "Marvic Holidays",
+  "title": "Marvic Holidays - Travel Booking Platform",
   "slug": "marvic-holidays",
   "client": "Marvic Holidays",
-  "description": "A comprehensive travel booking platform for holiday packages and tours.",
+  "description": "A comprehensive travel booking platform for holiday packages and tours. Learn how we built a modern travel platform driving increased bookings and customer engagement.",
   "content": {
-    "overview": "Marvic Holidays is a premier travel agency specializing in curated holiday packages. They needed a modern, responsive platform to showcase their offerings and streamline the booking process for customers.",
-    "challenge": "The existing system was manual and lacked a centralized platform for customers to explore packages, check availability, and make bookings. This led to inefficiencies and missed opportunities.",
-    "solution": "We developed a custom web application with a robust backend to manage holiday packages, integrated with a secure payment gateway and an intuitive user interface for seamless browsing and booking.",
-    "results": "The new platform significantly increased online bookings, improved customer engagement through high-quality visual content, and automated the booking management process for the Marvic team."
+    "overview": "Marvic Holidays is a premier travel agency specializing in curated holiday packages and tours. They needed a modern, responsive platform to showcase their offerings and provide customers with a seamless booking experience.",
+    "challenge": "The existing system was manual and lacked a centralized platform for customers to explore packages, check availability, and make bookings. This led to operational inefficiencies, missed opportunities, and a suboptimal customer experience.",
+    "solution": "We developed a custom web application featuring a robust backend for managing holiday packages. The platform includes high-quality visual content, integrated secure payment processing with Stripe, and an intuitive user interface for seamless browsing and booking.",
+    "results": "The new platform significantly increased online bookings and improved customer engagement. The automated booking management system reduced manual work for the Marvic team while providing customers with a modern, enjoyable booking experience."
   },
   "stats": {
     "duration": "4 Months",
     "teamSize": "3 Members",
     "technologies": ["React", "Node.js", "MongoDB", "Stripe"]
   },
-  "hero_image": "/images/case-studies/marvic-holidays.jpg",
-  "tags": "Web Development, Travel, E-commerce",
-  "featured": true,
-  "order": 5
+  "hero_image": "/images/marvic-screenshot.png",
+  "tags": ["Web Development", "Travel", "E-commerce", "Holiday Packages", "Booking"],
+  "featured": false,
+  "order": 8,
+  "disabled": true,
+  "seo_title": "Marvic Holidays Case Study | Momentaj - Travel Booking Platform Development",
+  "seo_description": "Discover how Momentaj built Marvic Holidays' travel booking platform. Learn how we created a modern solution that increased bookings and customer engagement.",
+  "seo_keywords": "travel platform, holiday booking, tour booking, travel website, booking system, travel agency website"
 }

@@ -1,22 +1,39 @@
 {
-  "title": "FluentCMS",
+  "title": "FluentCMS - Open Source ASP.NET Core & Blazor CMS",
   "slug": "fluentcms",
-  "client": "Open Source",
-  "description": "A modern, headless CMS built for speed and flexibility.",
+  "client": "Open Source Community",
+  "description": "A modern, open-source Content Management System built on ASP.NET Core and Blazor. Designed to be fast, flexible, and user-friendly, it serves as both a traditional site-builder and a robust headless CMS.",
   "content": {
-    "overview": "FluentCMS is an open-source headless CMS designed to provide developers with a flexible and powerful way to manage content across multiple platforms.",
-    "challenge": "Many existing CMS solutions are either too complex or too restrictive, making it difficult for developers to build custom content-driven applications efficiently.",
-    "solution": "We developed FluentCMS with a focus on simplicity and extensibility, providing a clean API and a user-friendly interface for content management.",
-    "results": "FluentCMS has become a popular choice for developers looking for a lightweight and flexible CMS, enabling them to build and deploy content-rich applications faster than ever before."
+    "overview": "FluentCMS is an open-source CMS designed to provide developers and content writers with a highly flexible platform. Built natively on the innovative Blazor framework, it bridges the gap between traditional content management and decoupled headless architectures.",
+    "challenge": "There has been a noticeable lack of suitable, modern .NET Blazor open-source CMS options in the market. Developers often faced restrictive legacy systems that hindered the seamless integration of modern frontend tools, AI-assisted workflows, and personalized user experiences.",
+    "solution": "FluentCMS was developed to fill this gap. Leveraging a headless architecture powered by ASP.NET Core, it separates the front and back ends. It features dynamic site-building via Blazor components, AI-powered writing assistance, Flowbite styling, and extensible plugins. It also supports flexible database options like LiteDB and MongoDB.",
+    "results": "FluentCMS is steadily growing an active open-source community on GitHub. It empowers development teams to build scalable applications while providing content creators with a sleek, intuitive dashboard for efficient content lifecycle management."
   },
   "stats": {
-    "duration": "Ongoing",
-    "teamSize": "Core Team",
-    "technologies": [".NET", "React", "PostgreSQL"]
+    "duration": "2 Years",
+    "teamSize": "4 Developers",
+    "technologies": [
+      "ASP.NET Core",
+      "Blazor",
+      "C#",
+      "Tailwind CSS / Flowbite",
+      "LiteDB / MongoDB"
+    ]
   },
-  "hero_image": "/images/case-studies/fluentcms.jpg",
-  "tags": "Open Source, CMS, Headless",
+  "hero_image": "/images/fluentcms-screenshot.png",
+  "tags": [
+    "Open Source",
+    "CMS",
+    "Headless",
+    "Blazor",
+    ".NET",
+    "AI-Powered"
+  ],
   "featured": true,
+  "disabled": false,
   "order": 1,
-  "url": "https://fluentcms.org"
+  "url": "https://fluentcms.com",
+  "seo_title": "FluentCMS Case Study | Open Source .NET Blazor Headless CMS",
+  "seo_description": "Discover FluentCMS, a modern open-source headless CMS built with ASP.NET Core and Blazor. Learn how it integrates AI and flexible architectures for developers.",
+  "seo_keywords": "headless CMS, open source CMS, .NET CMS, Blazor CMS, ASP.NET Core, FluentCMS, AI content generation"
 }

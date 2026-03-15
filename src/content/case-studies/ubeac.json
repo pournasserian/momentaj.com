@@ -1,21 +1,26 @@
 {
-  "title": "Ubeac",
+  "title": "Ubeac - IoT Platform for Smart Buildings",
   "slug": "ubeac",
   "client": "Ubeac",
-  "description": "IoT platform for unified building automation and control systems.",
+  "description": "IoT platform for unified building automation and control systems. Discover how we developed a scalable IoT solution connecting thousands of smart building devices.",
   "content": {
-    "overview": "Ubeac provides IoT solutions for smart building management and automation.",
-    "challenge": "They needed a scalable platform to connect and manage various IoT devices across multiple buildings.",
-    "solution": "We developed a cloud-based IoT platform with real-time device monitoring, automation rules, and comprehensive analytics.",
-    "results": "The platform has connected 50,000+ IoT devices, resulting in 30% energy savings for clients and real-time monitoring and alerts."
+    "overview": "Ubeac provides enterprise IoT solutions for smart building management and automation. Their platform enables building owners and managers to connect, monitor, and control various IoT devices across multiple properties from a single interface.",
+    "challenge": "Ubeac needed a scalable cloud platform to connect and manage diverse IoT devices across multiple buildings. The system had to handle real-time data streams, support complex automation rules, and provide actionable analytics while maintaining sub-second response times.",
+    "solution": "We developed a cloud-based IoT platform leveraging Azure IoT Hub for device connectivity and CosmosDB for scalable data storage. The platform includes real-time device monitoring, customizable automation rules, and comprehensive analytics dashboards.",
+    "results": "The platform successfully connects over 50,000 IoT devices and has helped clients achieve 30% energy savings. The real-time monitoring and automated alerts have significantly improved operational efficiency and reduced downtime."
   },
   "stats": {
     "duration": "12 Months",
     "teamSize": "8 Members",
     "technologies": ["Angular", ".NET Core", "Azure IoT Hub", "CosmosDB"]
   },
-  "hero_image": "/images/case-studies/ubeac.jpg",
-  "tags": "IoT, Smart Building, Automation, Cloud",
+  "hero_image": "/images/ubeac-screenshot.png",
+  "tags": ["IoT", "Smart Building", "Automation", "Cloud", "Azure", "Real-time"],
   "featured": true,
-  "order": 4
+  "order": 4,
+  "disabled": false,
+  "url": "https://ubeac.io",
+  "seo_title": "Ubeac Case Study | Momentaj - IoT Smart Building Platform Development",
+  "seo_description": "Discover how Momentaj built Ubeac's IoT platform for smart building automation. Learn about the scalable architecture connecting 50,000+ devices.",
+  "seo_keywords": "IoT platform, smart building, building automation, IoT solution, Azure IoT, Ubeac, device management"
 }

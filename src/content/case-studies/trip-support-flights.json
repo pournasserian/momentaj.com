@@ -1,21 +1,25 @@
 {
-  "title": "Trip Support Flights",
+  "title": "Trip Support Flights - Flight Search Engine",
   "slug": "trip-support-flights",
   "client": "Trip Support",
-  "description": "Advanced flight search and booking engine integration.",
+  "description": "Advanced flight search and booking engine integration. Learn how we built a high-performance flight search system processing millions of flight options.",
   "content": {
-    "overview": "Trip Support is a major player in the travel industry. This project focused on enhancing their flight booking capabilities by integrating multiple GDS and LCC providers into a unified, high-performance search engine.",
-    "challenge": "Integrating diverse flight data sources while maintaining fast search speeds and accurate pricing was a significant technical hurdle. The UI also needed to handle complex filtering and multi-city itineraries.",
-    "solution": "We implemented a microservices architecture to handle API integrations, optimized search algorithms for speed, and designed a user-friendly interface that simplifies the flight selection process.",
-    "results": "The enhanced flight engine led to a 30% increase in conversion rates and provided users with a much wider range of flight options and competitive pricing."
+    "overview": "Trip Support is a major player in the travel industry. This project focused on enhancing their flight booking capabilities by integrating multiple Global Distribution System (GDS) and Low-Cost Carrier (LCC) providers into a unified, high-performance search engine.",
+    "challenge": "Integrating diverse flight data sources while maintaining fast search speeds and accurate pricing presented significant technical challenges. The system needed to handle complex filtering, multi-city itineraries, and provide consistent results across all providers.",
+    "solution": "We implemented a microservices architecture to handle various API integrations efficiently. Optimized search algorithms and intelligent caching reduced response times, while a user-friendly interface simplifies the flight selection process for travelers.",
+    "results": "The enhanced flight engine led to a 30% increase in conversion rates. Users now have access to a much wider range of flight options and competitive pricing, significantly improving the overall booking experience."
   },
   "stats": {
     "duration": "6 Months",
     "teamSize": "5 Members",
     "technologies": ["Next.js", "Python", "Redis", "Amadeus API"]
   },
-  "hero_image": "/images/case-studies/trip-support-flights.jpg",
-  "tags": "API Integration, Travel, Performance Optimization",
+  "hero_image": "/images/tripsupport-flight-screenshot.png",
+  "tags": ["API Integration", "Travel", "Performance Optimization", "Flight Booking", "GDS"],
   "featured": true,
-  "order": 6
+  "disabled": false,
+  "order": 6,
+  "seo_title": "Trip Support Flights Case Study | Momentaj - Flight Search Engine Development",
+  "seo_description": "Discover how Momentaj built Trip Support's flight search engine. Learn about the technical challenges of integrating multiple flight providers.",
+  "seo_keywords": "flight search engine, GDS integration, travel API, Amadeus, flight booking, travel technology"
 }

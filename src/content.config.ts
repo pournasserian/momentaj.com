@@ -33,10 +33,17 @@ const caseStudies = defineCollection({
       technologies: z.array(z.string()).optional(),
     }).optional(),
     hero_image: z.string(),
-    tags: z.string().transform((val) => val.split(',').map((tag) => tag.trim())),
+    tags: z.union([
+      z.string(),
+      z.array(z.string())
+    ]).transform((val) => Array.isArray(val) ? val : val.split(',').map((tag) => tag.trim())),
     featured: z.boolean(),
     order: z.number(),
     url: z.string().url().optional(),
+    disabled: z.boolean().optional(),
+    seo_title: z.string().optional(),
+    seo_description: z.string().optional(),
+    seo_keywords: z.string().optional(),
   }),
 });
 
@@ -50,6 +57,8 @@ const services = defineCollection({
     icon: z.string(),
     featured: z.boolean(),
     order: z.number(),
+    seo_title: z.string().optional(),
+    seo_description: z.string().optional(),
   }),
 });
 
@@ -93,9 +102,33 @@ const settings = defineCollection({
   }),
 });
 
+const clients = defineCollection({
+  loader: glob({ pattern: 'clients.json', base: './src/content' }),
+  schema: z.object({
+    items: z.array(z.object({
+      name: z.string(),
+      logo: z.string(),
+      logoDark: z.string().optional(),
+      order: z.number(),
+    })),
+  }),
+});
+
+const features = defineCollection({
+  loader: glob({ pattern: 'features.json', base: './src/content' }),
+  schema: z.object({
+    items: z.array(z.object({
+      title: z.string(),
+      description: z.string(),
+    })),
+  }),
+});
+
 export const collections = {
   'case-studies': caseStudies,
   'services': services,
   'pages': pages,
   'settings': settings,
+  'clients': clients,
+  'features': features,
 };

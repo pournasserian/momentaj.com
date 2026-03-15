@@ -3,12 +3,12 @@
   "site_title": "Momentaj - Software Development & Consulting",
   "site_description": "Professional software development and consulting services",
   "site_keywords": "software development, consulting, API integration, cloud devops, UI/UX design",
-  "logo": "/media/logo.svg",
-  "favicon": "/favicon.ico",
-  "og_image": "/media/og-default.jpg",
-  "email": "hello@momentaj.com",
-  "phone": "+1 234 567 8900",
-  "address": "123 Tech Street, San Francisco, CA 94102",
+  "logo": "/images/logo.png",
+  "favicon": "/favicon/favicon.ico",
+  "og_image": "/images/logo.png",
+  "email": "ap@momentaj.com",
+  "phone": "+1 (647) 937-1601",
+  "address": "#204, 15 Wertheim Ct, Richmond Hill, ON L4B 3H7, Canada",
   "social_links": {
     "linkedin": "https://linkedin.com/company/momentaj"
   },

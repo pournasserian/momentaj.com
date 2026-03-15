@@ -1,13 +1,13 @@
 {
-  "title": "Lendin",
+  "title": "Lendin - Fintech Lending Platform",
   "slug": "lendin",
   "client": "Lendin",
-  "description": "A fintech lending platform providing quick and easy loans with seamless digital experience.",
+  "description": "A fintech lending platform providing quick and easy loans with seamless digital experience. Learn how we built a modern lending solution increasing applications by 40%.",
   "content": {
-    "overview": "Lendin is a leading fintech company that needed a modern web platform to streamline their lending process.",
-    "challenge": "They needed a fast, secure, and user-friendly platform that could handle complex loan applications while maintaining excellent performance.",
-    "solution": "We built a responsive web application using React and Node.js, integrating with multiple payment gateways and credit bureaus.",
-    "results": "The platform saw a 40% increase in loan applications and a 60% reduction in processing time, with a 95% customer satisfaction rate."
+    "overview": "Lendin is a leading fintech company offering quick and easy loans through a seamless digital platform. They needed a modern web application to streamline their lending process and provide customers with a smooth borrowing experience.",
+    "challenge": "The existing lending process was slow and cumbersome, with complex loan applications that frustrated potential borrowers. Lendin needed a fast, secure, and user-friendly platform that could handle sophisticated loan calculations while maintaining excellent performance and security.",
+    "solution": "We built a responsive web application using React and Node.js, integrating with multiple payment gateways and credit bureaus. The platform features intuitive application forms, real-time credit assessment, automated approval workflows, and secure document handling.",
+    "results": "The platform saw a 40% increase in loan applications and a 60% reduction in processing time. Customer satisfaction improved significantly, with a 95% positive feedback rating. The automated system reduced operational costs while improving approval accuracy."
   },
   "stats": {
     "duration": "5 Months",
@@ -15,7 +15,11 @@
     "technologies": ["React", "Node.js", "AWS", "PostgreSQL"]
   },
   "hero_image": "/images/case-studies/lendin.jpg",
-  "tags": "Fintech, Lending, React, Node.js",
-  "featured": true,
-  "order": 1
+  "tags": ["Fintech", "Lending", "React", "Node.js", "Financial Services"],
+  "featured": false,
+  "order": 9,
+  "disabled": true,
+  "seo_title": "Lendin Case Study | Momentaj - Fintech Lending Platform Development",
+  "seo_description": "Learn how Momentaj built Lendin's fintech lending platform. Discover how we created a digital lending solution that increased applications by 40%.",
+  "seo_keywords": "fintech lending, loan platform, digital lending, fintech development, lending software, financial technology"
 }

@@ -1,21 +1,25 @@
 {
-  "title": "Momentrack",
+  "title": "Momentrack - Real-Time Fleet Tracking",
   "slug": "momentrack",
   "client": "Momentrack",
-  "description": "Real-time tracking solution for logistics and fleet management.",
+  "description": "Real-time GPS tracking solution for logistics and fleet management. Learn how we built a scalable tracking platform monitoring thousands of vehicles.",
   "content": {
-    "overview": "Momentrack provides GPS tracking and fleet management solutions for businesses.",
-    "challenge": "They needed a real-time tracking dashboard that could handle thousands of vehicles and provide accurate location data.",
-    "solution": "We developed a scalable web application with WebSocket integration for real-time updates and an intuitive map interface.",
-    "results": "The system now tracks 5000+ vehicles in real-time with 99.9% uptime and provides advanced reporting and analytics."
+    "overview": "Momentrack provides GPS tracking and fleet management solutions for businesses with vehicle fleets. Their platform enables real-time location monitoring, route optimization, and comprehensive reporting for logistics operations.",
+    "challenge": "Momentrack needed a real-time tracking dashboard capable of handling thousands of vehicles simultaneously. The system required accurate location data, minimal latency, and the ability to process high volumes of GPS updates while providing intuitive user interfaces.",
+    "solution": "We developed a scalable web application featuring WebSocket integration for real-time updates and an intuitive map interface. The backend uses efficient data processing pipelines to handle millions of location updates daily with sub-second latency.",
+    "results": "The system now tracks over 5,000 vehicles in real-time with 99.9% uptime. Advanced reporting and analytics have helped fleet operators optimize routes, reduce fuel consumption, and improve overall operational efficiency."
   },
   "stats": {
     "duration": "6 Months",
     "teamSize": "5 Members",
     "technologies": ["React", "Node.js", "Socket.io", "MongoDB"]
   },
-  "hero_image": "/images/case-studies/momentrack.jpg",
-  "tags": "GPS, Tracking, Logistics, Real-time",
+  "hero_image": "/images/momentrack-screenshot.png",
+  "tags": ["GPS", "Tracking", "Logistics", "Real-time", "Fleet Management"],
   "featured": true,
-  "order": 2
+  "disabled": false,
+  "order": 5,
+  "seo_title": "Momentrack Case Study | Momentaj - Real-Time Fleet Tracking Platform",
+  "seo_description": "Learn how Momentaj built Momentrack, a real-time GPS tracking platform for fleet management. Discover how we handle thousands of vehicles with minimal latency.",
+  "seo_keywords": "fleet tracking, GPS tracking, logistics software, real-time tracking, vehicle tracking, fleet management"
 }

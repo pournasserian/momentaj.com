@@ -13,11 +13,28 @@ const caseStudies = allCaseStudies.length > 0
   : [];
 
 // Map case studies to display format
-const displayCaseStudies = caseStudies.map((study) => ({
+const displayCaseStudies = caseStudies.filter(x => !x.disabled).map((study) => ({
   ...study,
   subtitle: study.client,
   href: `/case-studies/${study.slug}`,
   services: study.tags || []
+}));
+
+// Map available screenshots to case studies
+const screenshotMap: Record<string, string> = {
+  'fluentcms': '/images/fluentcms-screenshot.png',
+  'momentrack': '/images/momentrack-screenshot.png',
+  'trip-support': '/images/tripsupport-screenshot.png',
+  'trip-support-flights': '/images/tripsupport-screenshot.png',
+  'trip-support-hotels': '/images/tripsupport-screenshot.png',
+  'ubeac': '/images/ubeac-screenshot.png',
+  'yesvelte': '/images/yesvelte-screenshot.png'
+};
+
+// Add screenshot to each case study
+const caseStudiesWithScreenshots = displayCaseStudies.map(study => ({
+  ...study,
+  screenshot: screenshotMap[study.slug] || null
 }));
 ---
 
@@ -44,14 +61,22 @@ const displayCaseStudies = caseStudies.map((study) => ({
     <section class="section-padding bg-color-bg-alt">
       <div class="container-custom">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {displayCaseStudies.map((study, index) => (
+          {caseStudiesWithScreenshots.map((study, index) => (
             <a href={study.href} class={`case-study-card bg-color-bg/50 border border-color-text/10 group animate-stagger animate-delay-${(index + 1) * 100}`}>
               <div class="h-64 bg-color-bg flex items-center justify-center border-b border-color-border/50 overflow-hidden">
-                <div class="transform group-hover:scale-110 transition-transform duration-1000">
-                  <svg class="w-20 h-20 text-color-text-light2 opacity-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
+                {study.screenshot ? (
+                  <img 
+                    src={study.screenshot} 
+                    alt={`${study.title} screenshot`}
+                    class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
+                  />
+                ) : (
+                  <div class="transform group-hover:scale-110 transition-transform duration-1000">
+                    <svg class="w-20 h-20 text-color-text-light2 opacity-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                )}
               </div>
               <div class="p-10">
                 <div class="text-[11px] font-bold uppercase tracking-[0.2em] text-color-accent mb-4">{study.subtitle}</div>
