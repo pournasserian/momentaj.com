@@ -83,15 +83,15 @@
 
   /* Clean section spacing */
   .section-padding {
-    @apply py-24 md:py-32;
+    @apply py-16 md:py-24 lg:py-32;
   }
   
   .section-title {
-    @apply text-4xl md:text-5xl mb-6;
+    @apply text-3xl md:text-4xl lg:text-5xl mb-4 md:mb-6;
   }
   
   .section-subtitle {
-    @apply text-lg md:text-xl max-w-2xl leading-relaxed;
+    @apply text-sm md:text-lg lg:text-xl max-w-2xl leading-relaxed;
     color: var(--color-color-text-light);
   }
 
@@ -209,7 +209,7 @@
 
   /* Stats cards - No hover effects */
   .stat-card {
-    @apply p-8 rounded-3xl;
+    @apply p-6 md:p-8 rounded-2xl md:rounded-3xl;
     background: #ffffff;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
   }
@@ -273,6 +273,41 @@
     }
     100% {
       transform: translateX(-33.33%);
+    }
+  }
+
+  /* Mobile client scroller */
+  .client-scroller-mobile {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .client-track-mobile {
+    display: flex;
+    gap: 2rem;
+    animation: scroll-mobile 20s linear infinite;
+    width: fit-content;
+  }
+
+  .client-track-reverse {
+    animation: scroll-mobile-reverse 20s linear infinite;
+  }
+
+  @keyframes scroll-mobile {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes scroll-mobile-reverse {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
     }
   }
 }

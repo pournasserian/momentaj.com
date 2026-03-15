@@ -70,32 +70,32 @@ const techStack = {
 ---
 
 <BaseLayout 
-  title="Momentaj - Custom Software Development & AI Solutions Company"
-  description="Momentaj delivers enterprise-grade custom software development, AI solutions, mobile apps, and cloud services. Trusted by 30+ businesses worldwide with 99% client satisfaction."
+  title="Momentaj - Custom Software Development & AI Company"
+  description="Momentaj delivers enterprise-grade custom software development, AI solutions, mobile apps, and cloud services."
   keywords="custom software development, AI development, mobile app development, web development, cloud solutions, machine learning, LLM development, software company, IT consulting"
 >
   <Header />
   
   <main>
     <!-- Hero Section -->
-    <section class="min-h-[85vh] flex items-center pt-40 pb-12 bg-color-bg overflow-hidden relative" aria-labelledby="hero-heading">
-      <!-- Gradient orbs -->
-      <div class="absolute top-20 right-0 w-[600px] h-[600px] bg-gradient-to-br from-blue-100 to-transparent rounded-full blur-3xl opacity-80 dark:from-blue-800/20"></div>
-      <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-blue-100/80 to-transparent rounded-full blur-3xl dark:from-blue-600/20"></div>
-      <div class="container-custom relative z-10">
-        <div class="grid lg:grid-cols-3 gap-6 lg:gap-8 items-start">
+    <section class="min-h-[85vh] w-full md:min-h-[85vh] flex items-center pt-24 md:pt-40 pb-10 md:pb-12 bg-color-bg overflow-hidden relative" aria-labelledby="hero-heading">
+      <!-- Gradient orbs - smaller on mobile -->
+      <div class="absolute top-16 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-gradient-to-br from-blue-100 to-transparent rounded-full blur-3xl opacity-80 dark:from-blue-800/20"></div>
+      <div class="absolute bottom-0 left-0 w-[200px] md:w-[400px] h-[200px] md:h-[400px] bg-gradient-to-tr from-blue-100/80 to-transparent rounded-full blur-3xl dark:from-blue-600/20"></div>
+      <div class="container-custom w-full relative z-10">
+        <div class="grid lg:grid-cols-3 w-full gap-6 lg:gap-8 items-start">
           <div class="max-w-2xl lg:col-span-2 animate-fade-in-up">
-            <h1 id="hero-heading" class="hero-title mb-8 text-4xl md:text-5xl lg:text-6xl">
+            <h1 id="hero-heading" class="hero-title mb-4 md:mb-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
               Build Scalable Software That Drives <span class="text-color-accent">Business Growth</span>
             </h1>
-            <p class="hero-subtitle mb-10 max-w-xl text-base md:text-lg text-color-text-light leading-relaxed">
+            <p class="hero-subtitle mb-8 md:mb-10 max-w-xl text-base md:text-lg text-color-text-light leading-relaxed">
               We deliver custom software solutions, AI development, and digital transformation services that help forward-thinking businesses innovate, scale, and succeed.
             </p>
-            <div class="flex flex-wrap gap-4 md:gap-6">
-              <a href="/services" class="btn-primary text-sm md:text-base">
+            <div class="flex flex-wrap gap-3 md:gap-6">
+              <a href="/services" class="btn-primary text-sm md:text-base py-3 px-5 md:py-4 md:px-6">
                 Explore Services
               </a>
-              <a href="/contact-us" class="btn-secondary text-sm md:text-base">
+              <a href="/contact-us" class="btn-secondary text-sm md:text-base py-3 px-5 md:py-4 md:px-6">
                 Get Free Consultation
               </a>
             </div>
@@ -119,15 +119,39 @@ const techStack = {
               <div class="stat-card !p-6">
                 <div class="text-5xl font-bold text-color-primary mb-2 tracking-tighter">99%</div>
                 <div class="text-[11px] font-bold text-color-text-light uppercase tracking-[0.15em]">Satisfaction</div>
+            </div>
+          </div>
+          
+          <!-- Mobile Stats - visible only on mobile -->
+          <div class="lg:hidden mt-10 animate-fade-in-up animate-delay-200">
+            <div class="grid grid-cols-2 gap-4">
+              <div class="stat-card !p-4">
+                <div class="text-3xl md:text-4xl font-bold text-color-primary mb-1 tracking-tighter">5+</div>
+                <div class="text-[10px] font-bold text-color-text-light uppercase tracking-[0.15em]">Years Experience</div>
+              </div>
+              <div class="stat-card !p-4">
+                <div class="text-3xl md:text-4xl font-bold text-color-primary mb-1 tracking-tighter">50+</div>
+                <div class="text-[10px] font-bold text-color-text-light uppercase tracking-[0.15em]">Projects Completed</div>
+              </div>
+              <div class="stat-card !p-4">
+                <div class="text-3xl md:text-4xl font-bold text-color-primary mb-1 tracking-tighter">30+</div>
+                <div class="text-[10px] font-bold text-color-text-light uppercase tracking-[0.15em]">Clients Worldwide</div>
+              </div>
+              <div class="stat-card !p-4">
+                <div class="text-3xl md:text-4xl font-bold text-color-primary mb-1 tracking-tighter">99%</div>
+                <div class="text-[10px] font-bold text-color-text-light uppercase tracking-[0.15em]">Satisfaction</div>
               </div>
             </div>
           </div>
         </div>
+        </div>
         
         <!-- Client logos in hero -->
-        <div class="mt-16 lg:mt-20">
-          <p class="text-center text-[11px] select-none font-bold uppercase tracking-[0.25em] text-color-text-light2 mb-8">Trusted by industry leaders</p>
-          <div class="client-scroller">
+        <div class="mt-12 md:mt-16 lg:mt-20">
+          <p class="text-start md:text-center text-[11px] select-none font-bold uppercase tracking-[0.25em] text-color-text-light2 mb-6 md:mb-8">Trusted by industry leaders</p>
+          
+          <!-- Desktop client scroller -->
+          <div class="hidden lg:block client-scroller">
             <div class="client-track">
               {[...clients, ...clients, ...clients].map((client) => (
                 <div class="client-logo-item">
@@ -149,26 +173,72 @@ const techStack = {
               ))}
             </div>
           </div>
+          
+          <!-- Mobile client list - 2 lines -->
+          <div class="lg:hidden space-y-4 overflow-hidden">
+            <!-- First line - scroll left -->
+            <div class="client-scroller-mobile">
+              <div class="client-track-mobile client-track-reverse">
+                {[...clients, ...clients].map((client) => (
+                  <div class="client-logo-item">
+                    <img 
+                      src={client.logo} 
+                      alt={client.name} 
+                      class="dark:hidden" 
+                      loading="lazy" 
+                    />
+                    <img 
+                      src={client.logoDark ?? client.logo} 
+                      alt={client.name} 
+                      class="hidden dark:block" 
+                      loading="lazy" 
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+            <!-- Second line - scroll right -->
+            <div class="client-scroller-mobile">
+              <div class="client-track-mobile">
+                {[...clients.slice().reverse(), ...clients.slice().reverse()].map((client) => (
+                  <div class="client-logo-item">
+                    <img 
+                      src={client.logo} 
+                      alt={client.name} 
+                      class="dark:hidden" 
+                      loading="lazy" 
+                    />
+                    <img 
+                      src={client.logoDark ?? client.logo} 
+                      alt={client.name} 
+                      class="hidden dark:block" 
+                      loading="lazy" 
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Why Momentaj - With gradient -->
     <section class="section-padding bg-color-bg relative overflow-hidden" aria-labelledby="why-heading">
-      <div class="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-50 to-transparent rounded-full blur-3xl opacity-60 dark:from-blue-900/10 dark:opacity-30"></div>
+      <div class="absolute top-0 left-1/4 w-48 md:w-96 h-48 md:h-96 bg-gradient-to-br from-blue-50 to-transparent rounded-full blur-3xl opacity-60 dark:from-blue-900/10 dark:opacity-30"></div>
       <div class="container-custom relative z-10">
-        <div class="text-center max-w-3xl mx-auto mb-28 animate-fade-in-up">
-          <h2 id="why-heading" class="section-title">Why Momentaj</h2>
-          <p class="section-subtitle mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-12 md:mb-20 lg:mb-28 animate-fade-in-up">
+          <h2 id="why-heading" class="section-title text-2xl md:text-3xl lg:text-4xl">Why Momentaj</h2>
+          <p class="section-subtitle mx-auto text-sm md:text-base mt-4">
             We deliver excellence through our commitment to quality, innovation, and client success.
           </p>
         </div>
         
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {features.map((feature, index) => (
             <div class={`feature-card animate-stagger animate-delay-${(index + 1) * 100}`}>
-              <h3 class="text-xl font-semibold mb-5 tracking-tight">{feature.title}</h3>
-              <p class="text-color-text-light leading-relaxed text-[15px]">{feature.description}</p>
+              <h3 class="text-lg md:text-xl font-semibold mb-4 md:mb-5 tracking-tight">{feature.title}</h3>
+              <p class="text-color-text-light leading-relaxed text-sm md:text-[15px]">{feature.description}</p>
             </div>
           ))}
         </div>
@@ -177,22 +247,22 @@ const techStack = {
 
     <!-- Services Section - With gradient -->
     <section class="section-padding bg-color-bg-alt relative overflow-hidden" aria-labelledby="services-heading">
-      <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-tl from-blue-50 to-transparent rounded-full blur-3xl opacity-60 dark:from-blue-900/10 dark:opacity-30"></div>
+      <div class="absolute bottom-0 right-1/4 w-48 md:w-96 h-48 md:h-96 bg-gradient-to-tl from-blue-50 to-transparent rounded-full blur-3xl opacity-60 dark:from-blue-900/10 dark:opacity-30"></div>
       <div class="container-custom relative z-10">
-        <div class="text-center max-w-3xl mx-auto mb-28">
-          <h2 id="services-heading" class="section-title">What We Offer</h2>
-          <p class="section-subtitle mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-12 md:mb-20 lg:mb-28">
+          <h2 id="services-heading" class="section-title text-2xl md:text-3xl lg:text-4xl">What We Offer</h2>
+          <p class="section-subtitle mx-auto text-sm md:text-base mt-4">
             We offer a wide range of services to help you achieve your business goals.
           </p>
         </div>
         
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {services.map((service) => (
             <a href={`/services/${service.slug}`} class="service-card bg-color-bg/50 border border-color-text/10 group">
-              <h3 class="text-2xl font-semibold mb-5 group-hover:text-color-accent transition-colors tracking-tight">
+              <h3 class="text-xl md:text-2xl font-semibold mb-4 md:mb-5 group-hover:text-color-accent transition-colors tracking-tight">
                 {service.title}
               </h3>
-              <p class="text-color-text-light leading-relaxed mb-8 text-[15px]">
+              <p class="text-color-text-light leading-relaxed mb-6 md:mb-8 text-sm md:text-[15px]">
                 {service.short_description}
               </p>
               <span class="text-sm font-semibold text-color-accent inline-flex items-center group-hover:translate-x-1 transition-transform">
@@ -202,7 +272,7 @@ const techStack = {
           ))}
         </div>
         
-        <div class="text-center mt-24">
+        <div class="text-center mt-12 md:mt-16 lg:mt-24">
           <a href="/services" class="link-underline font-semibold text-sm uppercase tracking-widest">
             View All Services
           </a>
@@ -212,26 +282,26 @@ const techStack = {
 
     <!-- Tech Stack - With gradient -->
     <section class="section-padding bg-color-bg relative overflow-hidden" aria-labelledby="tech-heading">
-      <div class="absolute top-1/2 left-0 w-80 h-80 bg-gradient-to-r from-blue-50 to-transparent rounded-full blur-3xl opacity-50 dark:from-blue-900/10 dark:opacity-25"></div>
+      <div class="absolute top-1/2 left-0 w-40 md:w-80 h-40 md:h-80 bg-gradient-to-r from-blue-50 to-transparent rounded-full blur-3xl opacity-50 dark:from-blue-900/10 dark:opacity-25"></div>
       <div class="container-custom relative z-10">
-        <div class="text-center max-w-3xl mx-auto mb-28">
-          <h2 id="tech-heading" class="section-title">Our Tech Stack</h2>
-          <p class="section-subtitle mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-12 md:mb-20 lg:mb-28">
+          <h2 id="tech-heading" class="section-title text-2xl md:text-3xl lg:text-4xl">Our Tech Stack</h2>
+          <p class="section-subtitle mx-auto text-sm md:text-base mt-4">
             Cutting-edge software stacks utilizing the latest technologies and best practices.
           </p>
         </div>
         
-        <div class="space-y-16">
+        <div class="space-y-10 md:space-y-16">
           {Object.entries(techStack).map(([category, techs]) => (
             <div>
-              <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-color-text-light2 mb-12 text-center">{category}</h3>
-              <div class="flex flex-wrap justify-center gap-6 md:gap-10">
+              <h3 class="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] text-color-text-light2 mb-8 md:mb-12 text-center">{category}</h3>
+              <div class="flex flex-wrap justify-center gap-4 md:gap-6 lg:gap-10">
                 {techs.map((tech) => (
                   <div class="flex flex-col items-center group">
-                    <div class="tech-logo mb-5">
+                    <div class="tech-logo mb-4 md:mb-5">
                       <img src={tech.logo} alt={tech.name} loading="lazy" />
                     </div>
-                    <span class="text-[11px] font-bold uppercase tracking-wider text-color-text-light opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">{tech.name}</span>
+                    <span class="text-[10px] md:text-[11px] font-bold uppercase tracking-wider text-color-text-light opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">{tech.name}</span>
                   </div>
                 ))}
               </div>
@@ -243,19 +313,19 @@ const techStack = {
 
     <!-- Case Studies - With gradient -->
     <section class="section-padding bg-color-bg-alt relative overflow-hidden" aria-labelledby="case-studies-heading">
-      <div class="absolute top-0 right-0 w-80 h-80 bg-gradient-to-l from-blue-50 to-transparent rounded-full blur-3xl opacity-50 dark:from-blue-900/10 dark:opacity-25"></div>
+      <div class="absolute top-0 right-0 w-40 md:w-80 h-40 md:h-80 bg-gradient-to-l from-blue-50 to-transparent rounded-full blur-3xl opacity-50 dark:from-blue-900/10 dark:opacity-25"></div>
       <div class="container-custom relative z-10">
-        <div class="text-center max-w-3xl mx-auto mb-28">
-          <h2 id="case-studies-heading" class="section-title">Case Studies</h2>
-          <p class="section-subtitle mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-12 md:mb-20 lg:mb-28">
+          <h2 id="case-studies-heading" class="section-title text-2xl md:text-3xl lg:text-4xl">Case Studies</h2>
+          <p class="section-subtitle mx-auto text-sm md:text-base mt-4">
             Tailored solutions for a variety of needs, from custom software development to IT consulting.
           </p>
         </div>
         
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
           {featuredCaseStudies.map((study) => (
             <a href={`/case-studies/${study.slug}`}  class="case-study-card bg-color-bg/50 border border-color-text/10 group">
-              <div class="h-72 bg-color-bg-alt flex items-center justify-center border-b border-color-border/50 overflow-hidden">
+              <div class="h-48 md:h-56 lg:h-72 bg-color-bg-alt flex items-center justify-center border-b border-color-border/50 overflow-hidden">
                 {study.hero_image ? (
                   <img 
                     src={study.hero_image} 
@@ -264,18 +334,18 @@ const techStack = {
                   />
                 ) : (
                   <div class="transform group-hover:scale-110 transition-transform duration-1000">
-                    <svg class="w-20 h-20 text-color-text-light2 opacity-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-16 md:w-20 h-16 md:h-20 text-color-text-light2 opacity-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
                 )}
               </div>
-              <div class="p-12">
-                <div class="text-[11px] font-bold uppercase tracking-[0.2em] text-color-accent mb-5">{study.client}</div>
-                <h3 class="text-2xl font-semibold mb-6 group-hover:text-color-accent transition-colors leading-tight tracking-tight">{study.title}</h3>
-                <div class="flex flex-wrap gap-3 mt-8">
+              <div class="p-5 md:p-6 lg:p-12">
+                <div class="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] text-color-accent mb-3 md:mb-5">{study.client}</div>
+                <h3 class="text-lg md:text-xl lg:text-2xl font-semibold mb-4 md:mb-6 group-hover:text-color-accent transition-colors leading-tight tracking-tight">{study.title}</h3>
+                <div class="flex flex-wrap gap-2 md:gap-3 mt-4 md:mt-8">
                   {study.tags && study.tags.map(tag => (
-                    <span class="text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full bg-color-bg text-color-text-light border border-color-border/50">{tag}</span>
+                    <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest px-2.5 md:px-4 py-1 md:py-1.5 rounded-full bg-color-bg text-color-text-light border border-color-border/50">{tag}</span>
                   ))}
                 </div>
               </div>
@@ -283,7 +353,7 @@ const techStack = {
           ))}
         </div>
         
-        <div class="text-center mt-24">
+        <div class="text-center mt-12 md:mt-16 lg:mt-24">
           <a href="/case-studies" class="link-underline font-semibold text-sm uppercase tracking-widest">
             View All Case Studies
           </a>
@@ -292,14 +362,14 @@ const techStack = {
     </section>
 
     <!-- CTA Section - With Contact Form -->
-    <section class="cta-section section-padding" aria-labelledby="cta-heading">
+    <section class="cta-section section-padding px-4 md:px-8" aria-labelledby="cta-heading">
       <div class="container-custom">
         <div class="max-w-4xl mx-auto">
-          <div class="text-center mb-16">
-            <h2 id="cta-heading" class="text-5xl md:text-6xl lg:text-7xl font-semibold text-white mb-6 tracking-tight leading-tight">
+          <div class="text-center mb-10 md:mb-16">
+            <h2 id="cta-heading" class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-white mb-4 md:mb-6 tracking-tight leading-tight">
               Ready to transform <br /> your business?
             </h2>
-            <p class="text-xl text-white/60 leading-relaxed">
+            <p class="text-base md:text-xl text-white/60 leading-relaxed">
               Let's discuss how we can help you achieve your business goals with high-performance software.
             </p>
           </div>
@@ -308,20 +378,20 @@ const techStack = {
           <form 
             action="https://api.web3forms.com/submit" 
             method="POST"
-            class="space-y-8"
+            class="space-y-6 md:space-y-8"
           >
             <input type="hidden" name="access_key" value="6534ba9d-139e-481a-9d06-0977b5815bf1" />
-            <div class="grid md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               <div class="relative group">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
                 <input
                   type="text"
                   id="name"
                   name="name"
                   required
-                  class="peer w-full bg-white/10 py-4 border-b border-white/20 focus:border-white transition-colors outline-none text-xl text-white font-medium placeholder-transparent"
+                  class="peer w-full bg-white/10 py-3 md:py-4 border-b border-white/20 focus:border-white transition-colors outline-none text-base md:text-xl text-white font-medium placeholder-transparent"
                   placeholder="Name"
                 />
-                <label for="name" class="absolute left-0 -top-3.5 text-white/50 text-xs font-bold uppercase tracking-widest transition-all peer-placeholder-shown:text-xl peer-placeholder-shown:top-4 peer-placeholder-shown:font-medium peer-placeholder-shown:tracking-normal peer-focus:-top-3.5 peer-focus:text-xs peer-focus:font-bold peer-focus:tracking-widest peer-focus:text-white">
+                <label for="name" class="absolute left-0 -top-3.5 text-white/50 text-xs font-bold uppercase tracking-widest transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 md:peer-placeholder-shown:top-4 peer-placeholder-shown:font-medium peer-placeholder-shown:tracking-normal peer-focus:-top-3.5 peer-focus:text-xs peer-focus:font-bold peer-focus:tracking-widest peer-focus:text-white">
                   Name *
                 </label>
               </div>
@@ -332,25 +402,25 @@ const techStack = {
                   id="email"
                   name="email"
                   required
-                  class="peer w-full bg-white/10 py-4 border-b border-white/20 focus:border-white transition-colors outline-none text-xl text-white font-medium placeholder-transparent"
+                  class="peer w-full bg-white/10 py-3 md:py-4 border-b border-white/20 focus:border-white transition-colors outline-none text-base md:text-xl text-white font-medium placeholder-transparent"
                   placeholder="Email"
                 />
-                <label for="email" class="absolute left-0 -top-3.5 text-white/50 text-xs font-bold uppercase tracking-widest transition-all peer-placeholder-shown:text-xl peer-placeholder-shown:top-4 peer-placeholder-shown:font-medium peer-placeholder-shown:tracking-normal peer-focus:-top-3.5 peer-focus:text-xs peer-focus:font-bold peer-focus:tracking-widest peer-focus:text-white">
+                <label for="email" class="absolute left-0 -top-3.5 text-white/50 text-xs font-bold uppercase tracking-widest transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 md:peer-placeholder-shown:top-4 peer-placeholder-shown:font-medium peer-placeholder-shown:tracking-normal peer-focus:-top-3.5 peer-focus:text-xs peer-focus:font-bold peer-focus:tracking-widest peer-focus:text-white">
                   Email *
                 </label>
               </div>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               <div class="relative group">
                 <input
                   type="text"
                   id="company"
                   name="company"
-                  class="peer w-full bg-white/10 py-4 border-b border-white/20 focus:border-white transition-colors outline-none text-xl text-white font-medium placeholder-transparent"
+                  class="peer w-full bg-white/10 py-3 md:py-4 border-b border-white/20 focus:border-white transition-colors outline-none text-base md:text-xl text-white font-medium placeholder-transparent"
                   placeholder="Company"
                 />
-                <label for="company" class="absolute left-0 -top-3.5 text-white/50 text-xs font-bold uppercase tracking-widest transition-all peer-placeholder-shown:text-xl peer-placeholder-shown:top-4 peer-placeholder-shown:font-medium peer-placeholder-shown:tracking-normal peer-focus:-top-3.5 peer-focus:text-xs peer-focus:font-bold peer-focus:tracking-widest peer-focus:text-white">
+                <label for="company" class="absolute left-0 -top-3.5 text-white/50 text-xs font-bold uppercase tracking-widest transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 md:peer-placeholder-shown:top-4 peer-placeholder-shown:font-medium peer-placeholder-shown:tracking-normal peer-focus:-top-3.5 peer-focus:text-xs peer-focus:font-bold peer-focus:tracking-widest peer-focus:text-white">
                   Company
                 </label>
               </div>
@@ -359,7 +429,7 @@ const techStack = {
                 <select
                   id="service"
                   name="service"
-                  class="peer w-full bg-white/10 py-4 border-b border-white/20 focus:border-white transition-colors outline-none text-xl text-white font-medium appearance-none cursor-pointer"
+                  class="peer w-full bg-white/10 py-3 md:py-4 border-b border-white/20 focus:border-white transition-colors outline-none text-base md:text-xl text-white font-medium appearance-none cursor-pointer"
                 >
                   <option value="" class="bg-gray-900">Select a service</option>
                   <option value="AI Consultation" class="bg-gray-900">AI Consultation</option>
@@ -373,8 +443,8 @@ const techStack = {
                 <label for="service" class="absolute left-0 -top-3.5 text-white/50 text-xs font-bold uppercase tracking-widest">
                   Service
                 </label>
-                <div class="absolute right-0 top-5 pointer-events-none text-white/50">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="absolute right-0 top-4 md:top-5 pointer-events-none text-white/50">
+                  <svg class="w-4 md:w-5 h-4 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                   </svg>
                 </div>
@@ -387,21 +457,21 @@ const techStack = {
                 name="message"
                 rows="1"
                 required
-                class="peer w-full bg-white/10 py-4 border-b border-white/20 focus:border-white transition-all outline-none text-xl text-white font-medium placeholder-transparent resize-none min-h-[60px]"
+                class="peer w-full bg-white/10 py-3 md:py-4 border-b border-white/20 focus:border-white transition-all outline-none text-base md:text-xl text-white font-medium placeholder-transparent resize-none min-h-[50px] md:min-h-[60px]"
                 placeholder="Message"
               ></textarea>
-              <label for="message" class="absolute left-0 -top-3.5 text-white/50 text-xs font-bold uppercase tracking-widest transition-all peer-placeholder-shown:text-xl peer-placeholder-shown:top-4 peer-placeholder-shown:font-medium peer-placeholder-shown:tracking-normal peer-focus:-top-3.5 peer-focus:text-xs peer-focus:font-bold peer-focus:tracking-widest peer-focus:text-white">
+              <label for="message" class="absolute left-0 -top-3.5 text-white/50 text-xs font-bold uppercase tracking-widest transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 md:peer-placeholder-shown:top-4 peer-placeholder-shown:font-medium peer-placeholder-shown:tracking-normal peer-focus:-top-3.5 peer-focus:text-xs peer-focus:font-bold peer-focus:tracking-widest peer-focus:text-white">
                 Message *
               </label>
             </div>
             
-            <div class="pt-4 text-center">
+            <div class="pt-2 md:pt-4 text-center">
               <button
                 type="submit"
-                class="bg-white text-black px-12 py-5 rounded-full font-semibold hover:scale-105 transition-all duration-500 group"
+                class="bg-white text-black px-8 md:px-12 py-3 md:py-5 rounded-full font-semibold hover:scale-105 transition-all duration-500 group text-sm md:text-base"
               >
                 Send Message
-                <svg class="w-5 h-5 ml-3 inline-block group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 md:w-5 h-4 md:h-5 ml-2 md:ml-3 inline-block group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </button>
