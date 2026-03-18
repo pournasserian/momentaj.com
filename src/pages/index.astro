@@ -175,11 +175,11 @@ const techStack = {
           </div>
           
           <!-- Mobile client list - 2 lines -->
-          <div class="lg:hidden space-y-4 overflow-hidden">
+          <div class="lg:hidden space-y-12 overflow-hidden py-4">
             <!-- First line - scroll left -->
             <div class="client-scroller-mobile">
               <div class="client-track-mobile client-track-reverse">
-                {[...clients, ...clients].map((client) => (
+                {[...clients.slice(0, clients.length / 2), ...clients.slice(0, clients.length / 2)].map((client) => (
                   <div class="client-logo-item">
                     <img 
                       src={client.logo} 
@@ -200,7 +200,7 @@ const techStack = {
             <!-- Second line - scroll right -->
             <div class="client-scroller-mobile">
               <div class="client-track-mobile">
-                {[...clients.slice().reverse(), ...clients.slice().reverse()].map((client) => (
+                {[...clients.slice(clients.length / 2), ...clients.slice(clients.length / 2)].map((client) => (
                   <div class="client-logo-item">
                     <img 
                       src={client.logo} 

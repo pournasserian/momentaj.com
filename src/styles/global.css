@@ -255,11 +255,17 @@
     height: 3.5rem;
   }
 
+  @media (max-width: 768px) {
+    .client-logo-item {
+      height: 1.5rem;
+    }
+  }
+
   .client-logo-item img {
     height: 100%;
     width: auto;
     object-fit: contain;
-    opacity: 0.4;
+    opacity: 0.7;
     transition: opacity 0.3s ease;
   }
 
