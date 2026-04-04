@@ -1,6 +1,10 @@
 # SEO Redirects Configuration
 # Add any URL redirects needed for SEO purposes
 
+# Force non-www to www (or vice versa) to avoid duplicate content
+# Using 301 permanent redirect for SEO
+https://www.momentaj.com/* https://momentaj.com/:splat 301
+
 # Example redirects (uncomment and modify as needed):
 # /old-page /new-page 301
 # /legacy /modern 301

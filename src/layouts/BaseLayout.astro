@@ -7,7 +7,6 @@ interface Props {
   title?: string;
   description?: string;
   keywords?: string;
-  canonicalURL?: string;
   ogImage?: string;
   pageType?: 'website' | 'article';
   publishedTime?: string;
@@ -23,8 +22,7 @@ const {
   title = siteData?.site_title || 'Momentaj - Tailored Software Solutions for Unique Business Needs',
   description = siteData?.site_description || 'Momentaj is a software development and IT consulting company based in Toronto, providing customized solutions to businesses across various industries.',
   keywords = siteData?.site_keywords || 'software development, consulting, API integration, cloud devops, UI/UX design, Toronto software company',
-  canonicalURL = Astro.url.href,
-  ogImage = siteData?.og_image || '/og-image.webp',
+  ogImage = siteData?.og_image || '/og-image.svg',
   pageType = 'website',
   publishedTime,
   author = 'Momentaj Inc',
@@ -34,6 +32,11 @@ const {
 
 const siteName = siteData?.site_name || 'Momentaj';
 const twitterHandle = '@momentaj';
+
+const baseUrl = 'https://momentaj.com';
+const currentPath = Astro.url.pathname;
+const canonicalURL = `${baseUrl}${currentPath}${Astro.url.search}`;
+const fullUrl = canonicalURL;
 ---
 
 <!DOCTYPE html>
@@ -42,7 +45,7 @@ const twitterHandle = '@momentaj';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="canonical" href={canonicalURL} />
+    <link rel="canonical" href={fullUrl} />
     
     <!-- Primary Meta Tags -->
     <title>{title}</title>
@@ -54,17 +57,17 @@ const twitterHandle = '@momentaj';
     <meta name="googlebot" content="index, follow" />
     <meta name="bingbot" content="index, follow" />
     <meta name="google-site-verification" content="" />
-    <link rel="alternate" hreflang="en" href={canonicalURL} />
-    <link rel="alternate" hreflang="x-default" href={canonicalURL} />
+    <link rel="alternate" hreflang="en" href={fullUrl} />
+    <link rel="alternate" hreflang="x-default" href={fullUrl} />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content={pageType} />
-    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:url" content={fullUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={`${baseUrl}${ogImage}`} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={title} />
@@ -78,10 +81,10 @@ const twitterHandle = '@momentaj';
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content={twitterHandle} />
     <meta name="twitter:creator" content={twitterHandle} />
-    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:url" content={fullUrl} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image" content={`${baseUrl}${ogImage}`} />
     <meta name="twitter:image:alt" content={title} />
     
     <!-- Additional SEO -->
@@ -94,15 +97,13 @@ const twitterHandle = '@momentaj';
     <link rel="icon" type="image/x-icon" href={siteData?.favicon || "/favicon.ico"} />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Fonts - Using system fonts fallback with Fontshare General Sans -->
+    <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" /></noscript>
     
     <ClientRouter />
     
     <!-- Resource Hints -->
-    <link rel="preconnect" href="https://momentaj.com" />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
