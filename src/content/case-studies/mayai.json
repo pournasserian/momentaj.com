@@ -15,6 +15,11 @@
     "technologies": ["Python", "LLM", "IoT", ".NET", "Microsoft Agent Framework", "React"]
   },
   "hero_image": "/images/mayai-screenshot.webp",
+  "screenshot": {
+    "src": "/images/mayai-screenshot.webp",
+    "width": 1440,
+    "height": 900
+  },
   "tags": ["AI", "IoT", "Home Automation", "LLM", "AI Agent Development", "Smart Home"],
   "featured": true,
   "disabled": false,

@@ -21,7 +21,11 @@
     ]
   },
   "hero_image": "/images/fluentcms-screenshot.webp",
-  "screenshot": "/images/fluentcms-screenshot.webp",
+  "screenshot": {
+    "src": "/images/fluentcms-screenshot.webp",
+    "width": 1352,
+    "height": 689
+  },
   "tags": [
     "Open Source",
     "CMS",

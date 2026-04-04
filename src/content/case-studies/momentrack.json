@@ -15,7 +15,11 @@
     "technologies": ["React", "Node.js", "Socket.io", "MongoDB"]
   },
   "hero_image": "/images/momentrack-screenshot.webp",
-  "screenshot": "/images/momentrack-screenshot.webp",
+  "screenshot": {
+    "src": "/images/momentrack-screenshot.webp",
+    "width": 1280,
+    "height": 607
+  },
   "tags": ["GPS", "Tracking", "Logistics", "Real-time", "Fleet Management"],
   "featured": true,
   "disabled": false,

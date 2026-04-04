@@ -15,7 +15,11 @@
     "technologies": ["Next.js", "Python", "Redis", "Amadeus API"]
   },
   "hero_image": "/images/tripsupport-flight-screenshot.webp",
-  "screenshot": "/images/tripsupport-screenshot.webp",
+  "screenshot": {
+    "src": "/images/tripsupport-flight-screenshot.webp",
+    "width": 1440,
+    "height": 1080
+  },
   "tags": ["API Integration", "Travel", "Performance Optimization", "Flight Booking", "GDS"],
   "featured": true,
   "disabled": false,

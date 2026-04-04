@@ -13,13 +13,17 @@ const caseStudies = allCaseStudies.length > 0
   : [];
 
 // Map case studies to display format
-const displayCaseStudies = caseStudies.filter(x => !x.disabled).map((study) => ({
-  ...study,
-  subtitle: study.client,
-  href: `/case-studies/${study.slug}`,
-  services: study.tags || [],
-  screenshot: study.screenshot || study.hero_image || null
-}));
+const displayCaseStudies = caseStudies.filter(x => !x.disabled).map((study) => {
+  const screenshotData = study.screenshot || study.hero_image;
+  const screenshot = typeof screenshotData === 'object' ? screenshotData : (screenshotData ? { src: screenshotData, width: 800, height: 600 } : null);
+  return {
+    ...study,
+    subtitle: study.client,
+    href: `/case-studies/${study.slug}`,
+    services: study.tags || [],
+    screenshot
+  };
+});
 ---
 
 <BaseLayout 
@@ -50,8 +54,10 @@ const displayCaseStudies = caseStudies.filter(x => !x.disabled).map((study) => (
               <div class="h-64 bg-color-bg flex items-center justify-center border-b border-color-border/50 overflow-hidden">
                 {study.screenshot ? (
                   <img 
-                    src={study.screenshot} 
+                    src={study.screenshot.src} 
                     alt={`${study.title} screenshot`}
+                    width={study.screenshot.width}
+                    height={study.screenshot.height}
                     class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
                   />
                 ) : (
