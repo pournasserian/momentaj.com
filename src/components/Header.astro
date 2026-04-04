@@ -17,7 +17,7 @@ const currentPath = Astro.url.pathname;
       <!-- Logo - Simple -->
       <a href="/" class="flex items-center gap-2 group invert dark:invert-0">
         {settings?.data?.logo ? (
-          <img src={settings.data.logo} alt={settings.data.site_name} class="h-8 md:h-12 w-auto group-hover:opacity-70 transition-opacity" />
+          <img src={settings.data.logo} alt={settings.data.site_name} width="262" height="74" class="h-8 md:h-12 w-auto group-hover:opacity-70 transition-opacity" />
         ) : (
           <span class="text-xl font-semibold text-color-primary tracking-tight group-hover:opacity-70 transition-opacity">
             {settings?.data?.site_name || 'Momentaj'}

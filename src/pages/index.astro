@@ -41,30 +41,30 @@ const features = featuresData?.data?.items || [];
 
 const techStack = {
   frontend: [
-    { name: 'React', logo: 'https://cdn.simpleicons.org/react' },
-    { name: 'Vue.js', logo: 'https://cdn.simpleicons.org/vuedotjs' },
-    { name: 'Angular', logo: 'https://cdn.simpleicons.org/angular' },
-    { name: 'Svelte', logo: 'https://cdn.simpleicons.org/svelte' },
-    { name: 'TailwindCSS', logo: 'https://cdn.simpleicons.org/tailwindcss' },
-    { name: 'TypeScript', logo: 'https://cdn.simpleicons.org/typescript' }
+    { name: 'React', logo: 'https://cdn.simpleicons.org/react', width: 48, height: 48 },
+    { name: 'Vue.js', logo: 'https://cdn.simpleicons.org/vuedotjs', width: 48, height: 48 },
+    { name: 'Angular', logo: 'https://cdn.simpleicons.org/angular', width: 48, height: 48 },
+    { name: 'Svelte', logo: 'https://cdn.simpleicons.org/svelte', width: 48, height: 48 },
+    { name: 'TailwindCSS', logo: 'https://cdn.simpleicons.org/tailwindcss', width: 48, height: 48 },
+    { name: 'TypeScript', logo: 'https://cdn.simpleicons.org/typescript', width: 48, height: 48 }
   ],
   backend: [
-    { name: 'Node.js', logo: 'https://cdn.simpleicons.org/nodedotjs' },
-    { name: 'Python', logo: 'https://cdn.simpleicons.org/python' },
-    { name: '.NET', logo: 'https://cdn.simpleicons.org/dotnet' },
-    { name: 'Go', logo: 'https://cdn.simpleicons.org/go' }
+    { name: 'Node.js', logo: 'https://cdn.simpleicons.org/nodedotjs', width: 48, height: 48 },
+    { name: 'Python', logo: 'https://cdn.simpleicons.org/python', width: 48, height: 48 },
+    { name: '.NET', logo: 'https://cdn.simpleicons.org/dotnet', width: 48, height: 48 },
+    { name: 'Go', logo: 'https://cdn.simpleicons.org/go', width: 48, height: 48 }
   ],
   mobile: [
-    { name: 'iOS', logo: 'https://cdn.simpleicons.org/apple' },
-    { name: 'Android', logo: 'https://cdn.simpleicons.org/android' },
-    { name: 'Flutter', logo: 'https://cdn.simpleicons.org/flutter' },
-    { name: 'React Native', logo: 'https://cdn.simpleicons.org/react' }
+    { name: 'iOS', logo: 'https://cdn.simpleicons.org/apple', width: 48, height: 48 },
+    { name: 'Android', logo: 'https://cdn.simpleicons.org/android', width: 48, height: 48 },
+    { name: 'Flutter', logo: 'https://cdn.simpleicons.org/flutter', width: 48, height: 48 },
+    { name: 'React Native', logo: 'https://cdn.simpleicons.org/react', width: 48, height: 48 }
   ],
   cloud: [
-    { name: 'AWS', logo: '/images/aws.webp' },
-    { name: 'Azure', logo: '/images/azure.webp' },
-    { name: 'Google Cloud', logo: 'https://cdn.simpleicons.org/googlecloud' },
-    { name: 'Docker', logo: 'https://cdn.simpleicons.org/docker' }
+    { name: 'AWS', logo: '/images/aws.webp', width: 48, height: 48 },
+    { name: 'Azure', logo: '/images/azure.webp', width: 48, height: 48 },
+    { name: 'Google Cloud', logo: 'https://cdn.simpleicons.org/googlecloud', width: 48, height: 48 },
+    { name: 'Docker', logo: 'https://cdn.simpleicons.org/docker', width: 48, height: 48 }
   ]
 };
 ---
@@ -299,7 +299,7 @@ const techStack = {
                 {techs.map((tech) => (
                   <div class="flex flex-col items-center group">
                     <div class="tech-logo mb-4 md:mb-5">
-                      <img src={tech.logo} alt={tech.name} loading="lazy" />
+                      <img src={tech.logo} alt={tech.name} width={tech.width} height={tech.height} loading="lazy" />
                     </div>
                     <span class="text-[10px] md:text-[11px] font-bold uppercase tracking-wider text-color-text-light opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">{tech.name}</span>
                   </div>

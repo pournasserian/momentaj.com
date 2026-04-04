@@ -97,7 +97,9 @@ const fullUrl = canonicalURL;
     <link rel="icon" type="image/x-icon" href={siteData?.favicon || "/favicon.ico"} />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     
-    <!-- Fonts - Using system fonts fallback with Fontshare General Sans -->
+    <!-- Fonts - Fontshare General Sans with preconnect -->
+    <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.simpleicons.org" crossorigin />
     <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
     <noscript><link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" /></noscript>
     
