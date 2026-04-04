@@ -14,11 +14,16 @@ if (!contactPage) {
 }
 
 const { data: page } = contactPage;
+
+const seoTitle = page.seo_title || "Contact Us - Momentaj | Get in Touch";
+const seoDescription = page.seo_description || "Contact Momentaj for a free consultation. We're ready to help with your software development and IT consulting needs.";
+const seoKeywords = page.seo_keywords || siteData?.site_keywords;
 ---
 
 <BaseLayout 
-  title="Contact Us - Momentaj | Get in Touch"
-  description="Contact Momentaj for a free consultation. We're ready to help with your software development and IT consulting needs."
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
 >
   <Header />
   

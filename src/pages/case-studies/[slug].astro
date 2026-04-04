@@ -50,24 +50,13 @@ const structuredContentHtml = isStructuredContent ? {
 
 const plainContentHtml = !isStructuredContent ? await renderMarkdown(caseStudy.content as string) : null;
 
-// Map available screenshots to case studies
-const screenshotMap: Record<string, { src: string; width: number; height: number }> = {
-  'fluentcms': { src: '/images/fluentcms-screenshot.webp', width: 1352, height: 689 },
-  'momentrack': { src: '/images/momentrack-screenshot.webp', width: 1280, height: 607 },
-  'trip-support': { src: '/images/tripsupport-screenshot.webp', width: 1440, height: 1080 },
-  'trip-support-flights': { src: '/images/tripsupport-screenshot.webp', width: 1440, height: 1080 },
-  'trip-support-hotels': { src: '/images/tripsupport-screenshot.webp', width: 1440, height: 1080 },
-  'ubeac': { src: '/images/ubeac-screenshot.webp', width: 1210, height: 652 },
-  'yesvelte': { src: '/images/yesvelte-screenshot.webp', width: 1611, height: 962 }
-};
-
-// Get screenshot for current case study
-const currentScreenshot = screenshotMap[slug] || null;
+// Get screenshot from content
+const currentScreenshot = caseStudy.screenshot || caseStudy.hero_image || null;
 
 // Add screenshots to related case studies
 const relatedCaseStudiesWithScreenshots = relatedCaseStudies.map(study => ({
   ...study,
-  screenshot: screenshotMap[study.slug] || null
+  screenshot: study.screenshot || study.hero_image || null
 }));
 ---
 
@@ -124,10 +113,8 @@ const relatedCaseStudiesWithScreenshots = relatedCaseStudies.map(study => ({
           <div class="max-w-5xl mx-auto animate-fade-in-up animate-delay-100">
             <div class="rounded-xl md:rounded-2xl overflow-hidden border border-color-border/30 shadow-xl md:shadow-2xl">
               <img 
-                src={currentScreenshot.src} 
+                src={currentScreenshot} 
                 alt={`${caseStudy.title} screenshot`}
-                width={currentScreenshot.width}
-                height={currentScreenshot.height}
                 class="w-full h-auto"
               />
             </div>
@@ -240,10 +227,8 @@ const relatedCaseStudiesWithScreenshots = relatedCaseStudies.map(study => ({
                 <div class="h-44 md:h-48 lg:h-56 bg-color-bg-alt flex items-center justify-center border-b border-color-border/50 overflow-hidden">
                   {study.screenshot ? (
                     <img 
-                      src={study.screenshot.src} 
+                      src={study.screenshot} 
                       alt={`${study.title} screenshot`}
-                      width={study.screenshot.width}
-                      height={study.screenshot.height}
                       class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
                     />
                   ) : (

@@ -8,6 +8,10 @@ import { getEntry, getCollection } from 'astro:content';
 const settings = await getEntry('settings', 'settings');
 const siteData = settings?.data;
 
+// Load home page content
+const homePage = await getEntry('pages', 'home');
+const homeContent = homePage?.data;
+
 // Load content from CMS
 const allCaseStudies = await getCollection('case-studies');
 const featuredCaseStudies = allCaseStudies.length > 0
@@ -36,6 +40,11 @@ const clients = clientsData?.data?.items || [];
 // Load features
 const featuresData = await getEntry('features', 'features');
 const features = featuresData?.data?.items || [];
+
+// SEO from content
+const seoTitle = homeContent?.seo_title || siteData?.site_title || "Momentaj - Custom Software Development & AI Company";
+const seoDescription = homeContent?.seo_description || siteData?.site_description || "Momentaj delivers enterprise-grade custom software development, AI solutions, mobile apps, and cloud services.";
+const seoKeywords = homeContent?.seo_keywords || siteData?.site_keywords || "custom software development, AI development, mobile app development, web development, cloud solutions, machine learning, LLM development, software company, IT consulting";
 
 
 

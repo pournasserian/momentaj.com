@@ -15,6 +15,7 @@
     "technologies": ["React", "Next.js", "Node.js", "Stripe"]
   },
   "hero_image": "/images/tripsupport-screenshot.webp",
+  "screenshot": "/images/tripsupport-screenshot.webp",
   "tags": ["Travel", "Booking", "Support", "Web Application", "Fintech"],
   "featured": true,
   "disabled": false,

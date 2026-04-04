@@ -17,24 +17,8 @@ const displayCaseStudies = caseStudies.filter(x => !x.disabled).map((study) => (
   ...study,
   subtitle: study.client,
   href: `/case-studies/${study.slug}`,
-  services: study.tags || []
-}));
-
-// Map available screenshots to case studies
-const screenshotMap: Record<string, { src: string; width: number; height: number }> = {
-  'fluentcms': { src: '/images/fluentcms-screenshot.webp', width: 1352, height: 689 },
-  'momentrack': { src: '/images/momentrack-screenshot.webp', width: 1280, height: 607 },
-  'trip-support': { src: '/images/tripsupport-screenshot.webp', width: 1440, height: 1080 },
-  'trip-support-flights': { src: '/images/tripsupport-screenshot.webp', width: 1440, height: 1080 },
-  'trip-support-hotels': { src: '/images/tripsupport-screenshot.webp', width: 1440, height: 1080 },
-  'ubeac': { src: '/images/ubeac-screenshot.webp', width: 1210, height: 652 },
-  'yesvelte': { src: '/images/yesvelte-screenshot.webp', width: 1611, height: 962 }
-};
-
-// Add screenshot to each case study
-const caseStudiesWithScreenshots = displayCaseStudies.map(study => ({
-  ...study,
-  screenshot: screenshotMap[study.slug] || null
+  services: study.tags || [],
+  screenshot: study.screenshot || study.hero_image || null
 }));
 ---
 
@@ -61,15 +45,13 @@ const caseStudiesWithScreenshots = displayCaseStudies.map(study => ({
     <section class="section-padding bg-color-bg-alt">
       <div class="container-custom">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {caseStudiesWithScreenshots.map((study, index) => (
+          {displayCaseStudies.map((study, index) => (
             <a href={study.href} class={`case-study-card bg-color-bg/50 border border-color-text/10 group animate-stagger animate-delay-${(index + 1) * 100}`}>
               <div class="h-64 bg-color-bg flex items-center justify-center border-b border-color-border/50 overflow-hidden">
                 {study.screenshot ? (
                   <img 
-                    src={study.screenshot.src} 
+                    src={study.screenshot} 
                     alt={`${study.title} screenshot`}
-                    width={study.screenshot.width}
-                    height={study.screenshot.height}
                     class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
                   />
                 ) : (
