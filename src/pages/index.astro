@@ -19,16 +19,10 @@ const featuredCaseStudies = allCaseStudies.length > 0
       .filter(study => study.data.featured && !study.data.disabled)
       .sort((a, b) => a.data.order - b.data.order)
       .slice(0, 3)
-      .map(study => {
-        const screenshotData = study.data.screenshot || study.data.hero_image;
-        const screenshot = typeof screenshotData === 'object' ? screenshotData : (screenshotData ? { src: screenshotData, width: 800, height: 600 } : null);
-        return {
-          ...study.data,
-          hero_image: screenshot?.src || study.data.hero_image,
-          hero_image_width: screenshot?.width,
-          hero_image_height: screenshot?.height
-        };
-      })
+      .map(study => ({
+        ...study.data,
+        hero_image: study.data.screenshot || study.data.hero_image
+      }))
   : [];
 
 const allServices = await getCollection('services');
@@ -345,9 +339,7 @@ const techStack = {
                   <img 
                     src={study.hero_image} 
                     alt={study.title}
-                    width={study.hero_image_width}
-                    height={study.hero_image_height}
-                    class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
+                    class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 aspect-[4/3]"
                   />
                 ) : (
                   <div class="transform group-hover:scale-110 transition-transform duration-1000">

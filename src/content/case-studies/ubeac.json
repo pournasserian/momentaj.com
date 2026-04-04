@@ -15,11 +15,7 @@
     "technologies": ["Angular", ".NET Core", "Azure IoT Hub", "CosmosDB"]
   },
   "hero_image": "/images/ubeac-screenshot.webp",
-  "screenshot": {
-    "src": "/images/ubeac-screenshot.webp",
-    "width": 1210,
-    "height": 652
-  },
+  "screenshot": "/images/ubeac-screenshot.webp",
   "tags": ["IoT", "Smart Building", "Automation", "Cloud", "Azure", "Real-time"],
   "featured": true,
   "order": 4,

@@ -15,11 +15,7 @@
     "technologies": ["TypeScript", "Go", "PostgreSQL", "Elasticsearch"]
   },
   "hero_image": "/images/tripsupport-hotel-screenshot.webp",
-  "screenshot": {
-    "src": "/images/tripsupport-hotel-screenshot.webp",
-    "width": 1440,
-    "height": 1080
-  },
+  "screenshot": "/images/tripsupport-hotel-screenshot.webp",
   "tags": ["Web Development", "Travel", "Scalability", "Hotel Booking", "E-commerce"],
   "featured": true,
   "disabled": false,

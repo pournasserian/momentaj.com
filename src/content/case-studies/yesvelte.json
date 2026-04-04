@@ -15,11 +15,7 @@
     "technologies": ["Svelte", "Bootstrap", "TypeScript"]
   },
   "hero_image": "/images/yesvelte-screenshot.webp",
-  "screenshot": {
-    "src": "/images/yesvelte-screenshot.webp",
-    "width": 1611,
-    "height": 962
-  },
+  "screenshot": "/images/yesvelte-screenshot.webp",
   "tags": ["Open Source", "UI Library", "Svelte", "Bootstrap", "Components"],
   "featured": true,
   "disabled": false,
